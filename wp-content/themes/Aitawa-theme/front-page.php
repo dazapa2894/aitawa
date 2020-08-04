@@ -4,6 +4,11 @@
 
 
 <main>
+
+  <section id="nav-bar">
+    
+  </section>
+
   <section id="top-bar">
     <div class="row no-margin">
       <div class="col xs12 s12 m12 l6 xl6">
