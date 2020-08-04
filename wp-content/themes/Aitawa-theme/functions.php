@@ -6,6 +6,15 @@ function add_normalize_CSS()
   wp_enqueue_style('normalize-styles', "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
 }
 
+function isotope_layoout_with_fit_columns()
+{
+    wp_register_script('isotope-layouts', get_template_directory_uri() . '/assets/lib/isotope/isotope-layout/dist/isotope.pkgd.min.js');
+ 
+    wp_enqueue_script( 'isotope-fit-columns', get_template_directory_uri() . '/assets/lib/isotope/isotope-fit-columns/fit-columns.js', array( 'isotope-layouts' ) );
+}
+add_action( 'wp_enqueue_scripts', 'isotope_layoout_with_fit_columns' );
+
+
 //Registrar hoja de javascript al tema
 function myscript_scripts_with_jquery()
 {

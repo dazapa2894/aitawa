@@ -2,16 +2,6 @@
 
 <?php get_header(); ?>
 
-<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-<script>
-  var elem = document.querySelector('.blogs-area');
-  console.log(elem);
-  var iso = new Isotope(elem, {
-    // options
-    itemSelector: '.blogs-wrapper',
-    layoutMode: 'fitColumns'
-  });
-</script>
 
 <main>
   <section id="top-bar">
