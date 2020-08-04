@@ -5,7 +5,10 @@ jQuery(document).ready(function($){
   var iso = new Isotope(elem, {
     // options
     itemSelector: '.blogs-wrapper',
-    layoutMode: 'fitColumns'
+    layoutMode: 'masonry',
+    masonry: {
+      gutter: 15
+    }
   });
 
   //Se inicializa el menú lateral
