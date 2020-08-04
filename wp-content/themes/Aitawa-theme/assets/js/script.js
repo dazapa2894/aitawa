@@ -1,5 +1,16 @@
 jQuery(document).ready(function($){
 
+  var elem = document.querySelector('.blogs-area');
+  console.log(elem);
+  var iso = new Isotope(elem, {
+    // options
+    itemSelector: '.blogs-wrapper',
+    layoutMode: 'masonry',
+    masonry: {
+      gutter: 15
+    }
+  });
+
   //Se inicializa el menú lateral
   $('.sidenav').sidenav();
 
