@@ -1,25 +1,25 @@
-jQuery(document).ready(function($){
-
-  var elem = document.querySelector('.blogs-area');
+jQuery(document).ready(function ($) {
+  //Aquí ocurre la magia del resposive de los blogs
+  var elem = document.querySelector(".blogs-area");
   console.log(elem);
   var iso = new Isotope(elem, {
     // options
-    itemSelector: '.blogs-wrapper',
-    layoutMode: 'masonry',
+    itemSelector: ".blogs-wrapper",
+    layoutMode: "masonry",
     masonry: {
-      gutter: 15
-    }
+      gutter: 15,
+    },
   });
 
   //Se inicializa el menú lateral
-  $('.sidenav').sidenav();
+  $(".sidenav").sidenav();
 
-  $('.carousel.carousel-slider').carousel({
+  $(".carousel.carousel-slider").carousel({
     fullWidth: true,
-    indicators: true
+    indicators: true,
   });
-  
-  // preparacion para el acordeon del side-bar
+
+  //Preparacion para el acordeon del side-bar
   $li_acordeon = $("#main-sidebar .menu-item-has-children");
   $li_acordeon.addClass("acordeon-header");
   $li_acordeon.attr("data-target", "sub_menu_mobile_1");
@@ -27,66 +27,56 @@ jQuery(document).ready(function($){
   $a_acordeon.addClass("acordeon-trigger");
   $ul_acordeon = $("#main-sidebar ul");
   $ul_acordeon.attr("id", "sub_menu_mobile_1");
-  if( $ul_acordeon.css('display') == 'block') {
-    $ul_acordeon.css('display', 'none');
+  if ($ul_acordeon.css("display") == "block") {
+    $ul_acordeon.css("display", "none");
   }
 
   //preparacion para el dropdown
   $(".menu-item-has-children:first a:first").addClass("dropdown-trigger"); // ubico el elemento del "a" y le agrego la clase dropdown-trigger
   $(".dropdown-trigger").attr("data-target", "dropdown-mobile"); // agrego el atributo "data-target"
   $(".dropdown-trigger").attr("showing", "false"); // agrego el atributo "showing"
-  $(".menu-item-has-children:first ul").attr("id","dropdown-mobile"); // ubico el elemento del "ul" y le agrego el id "dropdown-mobile" para que coincida con el data-target
+  $(".menu-item-has-children:first ul").attr("id", "dropdown-mobile"); // ubico el elemento del "ul" y le agrego el id "dropdown-mobile" para que coincida con el data-target
   $("#dropdown-mobile").addClass("dropdown-content"); // le agrego la clase "dropdown-content" al "#dropdown-mobile"
 
-
-
-  $( ".dropdown-trigger" ).click(function() {
+  $(".dropdown-trigger").click(function () {
     event.stopPropagation(); // SUPER IMPORTANTE PARA QUE NO SE CIERRE INMEDIATAMENTE
 
     $this = $(this);
     target = $this.attr("data-target");
     showing = $this.attr("showing");
-      console.log('Está corriendo el trigger');
+    console.log("Está corriendo el trigger");
 
     if (showing == "false") {
-    console.log('false');
+      console.log("false");
       $this.attr("showing", "true");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.addClass("dropdownIn-anim");
       $ul.removeClass("dropdownOut-anim");
       console.log($this);
-    console.log($ul);
-    }else if(showing == "true"){
-
+      console.log($ul);
+    } else if (showing == "true") {
       $this.attr("showing", "false");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.removeClass("dropdownIn-anim");
       $ul.addClass("dropdownOut-anim");
-    console.log('true');
+      console.log("true");
     }
   });
 
   //FUNCIÓN PARA MOSTRAR Y OCULTAR LOS DROPDOWNS DEL SIDENAV
 
-  $( ".acordeon-header" ).click(function() {
+  $(".acordeon-header").click(function () {
+    $this = $(this);
+    target = $this.attr("data-target");
 
-   $this = $(this);
-   target = $this.attr("data-target");
-
-   $target_acordeon = $("#"+target);
-   $target_acordeon.slideToggle(500);
-
-
-
-
+    $target_acordeon = $("#" + target);
+    $target_acordeon.slideToggle(500);
   });
 
-
   // FUNCION PARA MOSTRAR Y OCULTAR EL SIDE NAVBAR
-  $(".sidenav-trigger").click(function(){
-
+  $(".sidenav-trigger").click(function () {
     event.stopPropagation(); // SUPER IMPORTANTE PARA QUE NO SE CIERRE INMEDIATAMENTE
 
     $this = $(this);
@@ -94,93 +84,79 @@ jQuery(document).ready(function($){
     showing = $this.attr("showing");
 
     if (showing == "false") {
-
       $this.attr("showing", "true");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.addClass("sidenavIn-anim");
       $ul.removeClass("sidenavOut-anim");
 
       $("body").append('<div id="sidenav-overlay-back"></div>');
-      setTimeout(function(){
+      setTimeout(function () {
         $("#sidenav-overlay-back").addClass("opacityIn-anim");
       }, 50);
-
-
-
-    }else if(showing == "true"){
-
+    } else if (showing == "true") {
       $this.attr("showing", "false");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.removeClass("sidenavIn-anim");
       $ul.addClass("sidenavOut-anim");
 
       $("#sidenav-overlay-back").removeClass("opacityIn-anim");
       $("#sidenav-overlay-back").addClass("opacityOut-anim");
 
-      setTimeout(function(){
+      setTimeout(function () {
         $("#sidenav-overlay-back").remove();
       }, 500);
-
     }
-
   });
 
-
-  $("#main-sidebar").click( function(){
+  $("#main-sidebar").click(function () {
     event.stopPropagation(); // SUPER IMPORTANTE PARA QUE NO SE CIERRE INMEDIATAMENTE
   });
 
-
   // Cerrar dropdows y otros al hacer click por fuera
-  $(window).click(function() {
-
+  $(window).click(function () {
     // PARA CERRAR LOS DROPDOWNS
-    $( ".dropdown-trigger[showing=true]" ).each( function(){
-
+    $(".dropdown-trigger[showing=true]").each(function () {
       $this = $(this);
       target = $this.attr("data-target");
 
       $this.attr("showing", "false");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.removeClass("dropdownIn-anim");
       $ul.addClass("dropdownOut-anim");
-
     });
 
-    $(".sidenav-trigger[showing=true]").each( function(){
+    $(".sidenav-trigger[showing=true]").each(function () {
       $this = $(this);
       target = $this.attr("data-target");
 
       $this.attr("showing", "false");
 
-      $ul = $("#"+target);
+      $ul = $("#" + target);
       $ul.removeClass("sidenavIn-anim");
       $ul.addClass("sidenavOut-anim");
 
       $("#sidenav-overlay-back").removeClass("opacityIn-anim");
       $("#sidenav-overlay-back").addClass("opacityOut-anim");
 
-      setTimeout(function(){
+      setTimeout(function () {
         $("#sidenav-overlay-back").remove();
       }, 500);
-
     });
-
   });
 
   /////////////////////////////////// Resize img ///////////////////////////////////
   /////////////////////////////////// Resize img ///////////////////////////////////
   /////////////////////////////////// Resize img ///////////////////////////////////
-   /////////////////////////////////// Resize img ///////////////////////////////////
   /////////////////////////////////// Resize img ///////////////////////////////////
   /////////////////////////////////// Resize img ///////////////////////////////////
-    // Imagenes
+  /////////////////////////////////// Resize img ///////////////////////////////////
+  // Imagenes
+  crop_imgs_pro();
+  $(window).on("resize", function () {
     crop_imgs_pro();
-    $(window).on('resize', function(){
-      crop_imgs_pro();
 
     /* SE COMENTO PORQUE CAUSABA QUE LA PAGINA REGRESARA AL INCIO
     //Para que el sidenav no moleste cuando se haga resize del navegador
@@ -192,67 +168,67 @@ jQuery(document).ready(function($){
     */
   });
 
+  $(".run_crop_imgs_pro, .tab").click(function () {
+    setTimeout(function () {
+      crop_imgs_pro();
+    }, 1);
+  });
 
-    $(".run_crop_imgs_pro, .tab").click(function(){
-      setTimeout(function(){
-        crop_imgs_pro();
-      }, 1);
-    });
-
-    function crop_imgs_pro(){
+  function crop_imgs_pro() {
     //Materialize.toast("Esta mierda se demoro",5000);
-    $(".crop-padre img").one("load", function() {
-      width = parseInt( $(this).width() );
-      height = parseInt($(this).height() );
-      if( width > height ){
-        $(this).removeClass("image-crop-vertical");
-        $(this).removeClass("image-crop-horizontal");
-        $(this).addClass("image-crop-horizontal");
-      }else {
-        $(this).removeClass("image-crop-vertical");
-        $(this).removeClass("image-crop-horizontal");
-        $(this).addClass("image-crop-vertical");
-      }
-    }).each(function() {
-      if(this.complete) $(this).load();
-    });
-
-    $(".crop-padre img").one("load", function() {
-      width_son = parseInt( $(this).width() );
-      height_son = parseInt($(this).height() );
-
-      width_father = parseInt( $(this).parent().width() );
-      height_father = parseInt($(this).parent().height() );
-
-      if (width_son < width_father) {
-        $(this).removeClass("image-crop-vertical");
-        $(this).removeClass("image-crop-horizontal");
-        $(this).addClass("image-crop-vertical");
-      }else if (height_son < height_father) {
-        $(this).removeClass("image-crop-vertical");
-        $(this).removeClass("image-crop-horizontal");
-        $(this).addClass("image-crop-horizontal");
-      }else if (height_son==width_son) {
-        if (width_father > height_father) {
-          $(this).removeClass("image-crop-vertical");
-          $(this).removeClass("image-crop-horizontal");
-          $(this).addClass("image-crop-vertical");
-        }else if (width_father < height_father) {
+    $(".crop-padre img")
+      .one("load", function () {
+        width = parseInt($(this).width());
+        height = parseInt($(this).height());
+        if (width > height) {
           $(this).removeClass("image-crop-vertical");
           $(this).removeClass("image-crop-horizontal");
           $(this).addClass("image-crop-horizontal");
+        } else {
+          $(this).removeClass("image-crop-vertical");
+          $(this).removeClass("image-crop-horizontal");
+          $(this).addClass("image-crop-vertical");
         }
-      }
-    }).each(function() {
-      if(this.complete) $(this).load();
-    });
+      })
+      .each(function () {
+        if (this.complete) $(this).load();
+      });
+
+    $(".crop-padre img")
+      .one("load", function () {
+        width_son = parseInt($(this).width());
+        height_son = parseInt($(this).height());
+
+        width_father = parseInt($(this).parent().width());
+        height_father = parseInt($(this).parent().height());
+
+        if (width_son < width_father) {
+          $(this).removeClass("image-crop-vertical");
+          $(this).removeClass("image-crop-horizontal");
+          $(this).addClass("image-crop-vertical");
+        } else if (height_son < height_father) {
+          $(this).removeClass("image-crop-vertical");
+          $(this).removeClass("image-crop-horizontal");
+          $(this).addClass("image-crop-horizontal");
+        } else if (height_son == width_son) {
+          if (width_father > height_father) {
+            $(this).removeClass("image-crop-vertical");
+            $(this).removeClass("image-crop-horizontal");
+            $(this).addClass("image-crop-vertical");
+          } else if (width_father < height_father) {
+            $(this).removeClass("image-crop-vertical");
+            $(this).removeClass("image-crop-horizontal");
+            $(this).addClass("image-crop-horizontal");
+          }
+        }
+      })
+      .each(function () {
+        if (this.complete) $(this).load();
+      });
   }
 
-
-
   // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
+  $("a").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -263,24 +239,57 @@ jQuery(document).ready(function($){
 
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800,
+        function () {
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        }
+      );
     } // End if
   });
 
   //Sliders
-    $('.home-slider').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: '<i class="fas fa-chevron-left arrow-left"></i>',
-      nextArrow: '<i class="fas fa-chevron-right arrow-right"></i>'
-    });
+  $(".home-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: '<i class="fas fa-chevron-left arrow-left"></i>',
+    nextArrow: '<i class="fas fa-chevron-right arrow-right"></i>',
+  });
 
+  //Acá se resolverán el tema del menú lateral izquierdo
 
-});// End document ready
+  moves = {
+    initial: {
+      x: null,
+      y: null,
+    },
+    actual: {
+      x: null,
+      y: null,
+    },
+  };
+
+  $(window).scroll(function(){
+    let header = $('#top-bar').height();
+    let navbar = $('#nav-bar');
+    if ($(this).scrollTop() >= header) {
+      navbar.css('margin-top','0');
+      navbar.css('position','fixed');
+    }else{
+      navbar.css('margin-top','88px');
+      navbar.css('position','absolute');
+    }
+    console.log($(this));
+    // content.ontouchstart = function (e) {
+    //   moves.initial = {
+    //     x: e.changedTouches[0].clientX,
+    //     y: e.changedTouches[0].clientY,
+    //   };
+    // };
+  });
+}); // End document ready
