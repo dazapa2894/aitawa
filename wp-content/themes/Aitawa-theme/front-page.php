@@ -2,6 +2,17 @@
 
 <?php get_header(); ?>
 
+<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+<script>
+  var elem = document.querySelector('.blogs-area');
+  console.log(elem);
+  var iso = new Isotope(elem, {
+    // options
+    itemSelector: '.blogs-wrapper',
+    layoutMode: 'fitColumns'
+  });
+</script>
+
 <main>
   <section id="top-bar">
     <div class="row no-margin">
@@ -60,7 +71,7 @@
       </div>
     </div>
 
-    <div class="products-wrapper">     
+    <div class="products-wrapper">
 
       <?php
       $args = array('post_type' => 'product', 'posts_per_page' => 6, 'product_cat' => 'producto', 'orderby' => 'post_date');
@@ -69,19 +80,19 @@
         global $product; ?>
 
         <a class="product-wrap" href="<?php echo get_permalink($loop->post->ID) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
-        <div class="product-image">
-          <?php if (has_post_thumbnail($loop->post->ID))
-            echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
-          else
-            echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . the_title() . '" />'; ?>
-        </div>
-        <div class="product-info">
-          <h3> <?php the_title(); ?></h3>
-          <p>
+          <div class="product-image">
+            <?php if (has_post_thumbnail($loop->post->ID))
+              echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+            else
+              echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . the_title() . '" />'; ?>
+          </div>
+          <div class="product-info">
+            <h3> <?php the_title(); ?></h3>
+            <p>
               <?php the_excerpt(); ?>
-          </p>
-        </div>
-      </a><!-- end product-wrap -->
+            </p>
+          </div>
+        </a><!-- end product-wrap -->
 
       <?php endwhile; ?>
       <?php wp_reset_query(); ?>
@@ -113,119 +124,35 @@
       );
 
       $posts = new WP_Query($args);
-      $noPost = 0;
-      $totalForColumn = (wp_count_posts()->publish)/4;
-      $numberForColumn = explode(".", strval($totalForColumn));
-      $col4 = $numberForColumn[0];
-      $noColumn = 1;
-      $newColumn = false;
-
-      if ($numberForColumn[1]) {
-        $num1 = intval($numberForColumn[0]);
-        $num2 = intval($numberForColumn[1]);
-        switch ($num2) {
-          
-          case '75':
-            $limit = $col1 = $col2 = $col3 = $num1+1;
-          break;
-          case '5':
-            $limit = $col1 = $col2 = $num1+1;
-            $col3 = $num1;
-          break;
-          case '25':
-            $limit = $col1 = $num1+1;
-            $col2 = $col3 = $num1;
-          break;
-          
-          default:
-            # code...
-          break;
-        }
-      }else{
-        $col1 = $col2 = $col3 = $limit = $numberForColumn[0];
-      }
 
       // Content display
       if ($posts->have_posts()) : ?>
 
-        <div class="blogs-wrapper blog1">
 
-          <?php 
-          while ($posts->have_posts()) : $posts->the_post(); 
-          
-          ?>
-            <?php if ($noPost < $limit) :
-              $newColumn = false;
-            ?>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
+        <?php while ($posts->have_posts()) : $posts->the_post(); ?>
 
-                <div class="blog-image crop-padre">
-                  <?php the_post_thumbnail('large'); ?>
+          <div class="blogs-wrapper">
+
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
+
+              <div class="blog-image crop-padre">
+                <?php the_post_thumbnail('large'); ?>
+              </div>
+
+              <div class="blog-info">
+                <div class="image-behind"></div>
+                <div class="blog-title">
+                  <h2><?php the_title(); ?></h2>
                 </div>
+                <?php the_excerpt(); ?>
+              </div>
+              <img class="bolg-dot" src="" alt="DOT" />
 
-                <div class="blog-info">
-                  <div class="image-behind"></div>
-                  <div class="blog-title">
-                    <h2><?php the_title(); ?></h2>
-                  </div>
-                  <?php the_excerpt(); ?>
-                </div>
-                <img class="bolg-dot" src="" alt="DOT" />
+            </a><!-- end blog-wrap -->
 
-              </a><!-- end blog-wrap -->
-            <?php else :
-              $noPost = 0;
-              $newColumn = true;
-            endif;
-            ?>
-            <?php
-            if ($newColumn) :
+          </div><!-- end blogs-wrapper -->
 
-              $noColumn++; 
-
-              switch ($noColumn) {
-                case 2:
-                  $limit = $col2;
-                break;
-                case 3:
-                  $limit = $col3;
-                break;
-                case 4:
-                  $limit = $col4;
-                break;
-                
-                default:
-                  # code...
-                  break;
-              }
-            ?>
-
-              </div><!-- end blogs-wrapper -->
-
-              <div class="blogs-wrapper blog<?=$noColumn?>">
-
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
-
-                  <div class="blog-image crop-padre">
-                    <?php the_post_thumbnail('large'); ?>
-                  </div>
-
-                  <div class="blog-info">
-                    <div class="image-behind"></div>
-                    <div class="blog-title">
-                      <h2><?php the_title(); ?></h2>
-                    </div>
-                    <?php the_excerpt(); ?>
-                  </div>
-                  <img class="bolg-dot" src="" alt="DOT" />
-
-                </a><!-- end blog-wrap -->
-
-            <?php endif ?>
-            <?php $noPost++; ?>
-          <?php endwhile; ?>
-
-        </div>
+        <?php endwhile; ?>
 
       <?php endif;
 
