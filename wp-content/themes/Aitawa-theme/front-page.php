@@ -2,63 +2,103 @@
 
 <?php get_header(); ?>
 
-<script>
-
-jQuery(document).ready(function($){
-  $(window).resize(function(e){
-    $(".big-title").innerHTML = e;
-  });
-});
-
-</script>
-
 <main>
-  <section id="top-slider">
+  <section id="top-bar">
+    <div class="row no-margin">
+      <div class="col xs12 s12 m12 l6 xl6">
+        <p>
+          Esta es una notificación del sitio web importante para usted, <a href="#">CLICK AQUÍ</a>.
+        </p>
+      </div><!-- end col -->
+      <div class="col xs12 s12 m12 l6 xl6">
+        <div class="close-alert"> <i class="material-icons">close</i></div>
+      </div>
+    </div><!-- end row -->
+  </section>
 
+
+  <section id="top-slider">
+    <div class="home-slider">
+
+      <?php
+      $slides_counter = 1;
+      while (get_field('imagen_de_fondo_' . $slides_counter) != NULL) :
+      ?>
+
+        <div class="home-slide" style="background-image: url('<?php echo get_field('imagen_de_fondo_' . $slides_counter); ?>')">
+
+          <!-- <div class="home-mobile-slide-img crop-padre">
+            <img src="<?php echo get_field('imagen_de_fondo_mobile_' . $slides_counter); ?>" alt="" />
+          </div>-->
+
+          <div class="home-slide-info">
+            <h2>
+              <?php echo get_field('titulo_slide_' . $slides_counter); ?>
+            </h2>
+            <p>
+              <?php echo get_field('descripcion_de_slide_' . $slides_counter); ?>
+            </p>
+          </div>
+
+        </div><!-- end home slide -->
+      <?php
+        $slides_counter++;
+      endwhile;
+      ?>
+
+    </div><!-- end home slider -->
   </section>
 
   <section id="home-nuestros-productos">
 
-    <div class="big-title">
-      <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
-      <h2>Nuestros productos</h2>
-    </div><!-- end big title -->
+    <div class="row">
+      <div class="col xs12 s12 m12 l10 xl10 offset-l2 offset-xl2">
+        <div class="big-title">
+          <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
+          <h2>Nuestros productos</h2>
+        </div><!-- end big title -->
+      </div>
+    </div>
 
-    <div class="products-wrapper">
+    <div class="products-wrapper">     
 
-      <div class="product-wrap">
+      <?php
+      $args = array('post_type' => 'product', 'posts_per_page' => 6, 'product_cat' => 'producto', 'orderby' => 'post_date');
+      $loop = new WP_Query($args);
+      while ($loop->have_posts()) : $loop->the_post();
+        global $product; ?>
+
+        <a class="product-wrap" href="<?php echo get_permalink($loop->post->ID) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
         <div class="product-image">
-          <img src="" alt="">
+          <?php if (has_post_thumbnail($loop->post->ID))
+            echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog');
+          else
+            echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="' . the_title() . '" />'; ?>
         </div>
         <div class="product-info">
-          <h3>Aceite de coco</h3>
+          <h3> <?php the_title(); ?></h3>
           <p>
-            El cloruro de magnesio aporta muchos beneficios en salud y belleza
+              <?php the_excerpt(); ?>
           </p>
         </div>
-      </div><!-- end product-wrap -->
+      </a><!-- end product-wrap -->
 
-      <div class="product-wrap">
-        <div class="product-image">
-          <img src="" alt="">
-        </div>
-        <div class="product-info">
-          <h3>Aceite de coco</h3>
-          <p>
-            El cloruro de magnesio aporta muchos beneficios en salud y belleza
-          </p>
-        </div>
-      </div><!-- end product-wrap -->
+      <?php endwhile; ?>
+      <?php wp_reset_query(); ?>
 
     </div><!-- end products-wrapper -->
   </section>
 
   <section id="home-blogs">
 
-    <div class="big-title">
-      <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
-      <h2>Nuestros productos</h2>
-    </div><!-- end big title -->
+    <div class="row">
+      <div class="col xs12 s12 m12 l10 xl10 offset-l2 offset-xl2">
+        <div class="big-title">
+          <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
+          <h2>Nuestros productos</h2>
+        </div><!-- end big title -->
+      </div>
+    </div>
 
     <div class="blogs-area">
 
@@ -193,13 +233,6 @@ jQuery(document).ready(function($){
       ?>
     </div><!-- end blogs-area -->
   </section>
-
-  <div class="container-new">
-    <a href="" class="candado">
-      <img src="<?php echo $url_theme ?>assets/img/candado.png" alt="Candado">
-      <p>Regístrate y elige mejor versión</p>
-    </a>
-  </div>
 
 </main>
 
