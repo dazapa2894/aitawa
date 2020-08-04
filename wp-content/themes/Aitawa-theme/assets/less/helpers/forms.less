@@ -1,0 +1,87 @@
+//main: ../style.less
+/* ------------------------------------------- Formularios -----------------------------------------------*/
+/* --------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------- */
+
+.input-field{
+  position: relative;
+  margin-top: 1rem!important;
+  margin-bottom: 1rem!important;
+  label{
+    color: #9e9e9e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    cursor: text;
+    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    text-align: initial;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    left: .75rem;
+    top: -25px;
+  }
+  input, textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    min-height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: border .3s, -webkit-box-shadow .3s;
+    transition: border .3s, -webkit-box-shadow .3s;
+    transition: box-shadow .3s, border .3s;
+    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+    &:focus{
+      border-bottom: 1px solid #FF6F37;
+      -webkit-box-shadow: 0 1px 0 0 #FF6F37;
+      box-shadow: 0 1px 0 0 #FF6F37;
+    }
+  }
+  textarea{
+    overflow: hidden;
+    padding: 0;
+    outline: none;
+    resize: none;
+    margin-top: 15px;
+    width: 100%;
+  }
+  .send-btn{
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 30px;
+    font-size: 16px;
+    min-height: auto;
+    line-height: 1.5;
+    width: fit-content;
+    background-color: #1D1D1D;
+    border-bottom: none!important;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .5s ease-in-out;
+    &:hover{
+      background-color: #FF6F37;
+      transition: all .5s ease-in-out;
+    }
+  }
+}
+.hiddendiv {
+  display: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

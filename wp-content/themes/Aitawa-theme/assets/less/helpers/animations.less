@@ -1,0 +1,214 @@
+//main: ../style.less
+
+/* ---------------------------------------------- Transitions ----------------------------------------------*/
+/* --------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------- */
+
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+
+
+
+/* ---------------------------------------------- Animations ----------------------------------------------*/
+/* --------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------- */
+
+
+
+
+//BOING
+@keyframes boing {
+  0%   {transform: scale(1);}
+  25%  {transform: scale(1.2);}
+  50%   {transform: scale(1);}
+  75%  {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+@mixin boing_animation{
+  -webkit-animation: boing .6s;
+  -moz-animation: boing .6s;
+  -o-animation: boing .6s;
+  animation: boing .6s;
+}
+.boing-anim{
+  @include boing_animation;
+}
+
+
+
+// DISABLE ANIM
+@keyframes disable {
+  0%   {
+    background-color: #C62828;
+    pointer-events: none;
+  }
+  25% {
+    background-color: #777;
+  }
+  75% {
+    background-color: #777;
+  }
+  95%  {
+    pointer-events: none;
+  }
+  100% {
+    background-color: #C62828;
+    pointer-events: all;
+  }
+}
+@mixin disable_animation{
+  -webkit-animation: disable 1s;
+  -moz-animation: disable 1s;
+  -o-animation: disable 1s;
+  animation: disable 1s;
+}
+.disable-anim{
+  @include disable_animation;
+}
+
+
+
+// FLASH IN-OUT ANIM
+@keyframes flashIn {
+  0%   {opacity: 1;}
+  100% {opacity: 0;}
+}
+@keyframes flashOut {
+  0% {opacity: 0;}
+  100%   {opacity: 1;}
+}
+@mixin flashIn_animation($time){
+  -webkit-animation: flashIn $time ease-in-out;
+  -moz-animation: flashIn $time ease-in-out;
+  -o-animation: flashIn $time ease-in-out;
+  animation: flashIn $time ease-in-out;
+}
+@mixin flashOut_animation($time){
+  -webkit-animation: flashOut $time ease-in-out;
+  -moz-animation: flashOut $time ease-in-out;
+  -o-animation: flashOut $time ease-in-out;
+  animation: flashOut $time ease-in-out;
+}
+.flashIn-anim{
+  @include flashIn_animation(.25s);
+}
+.flashOut-anim{
+  @include flashOut_animation(.25s);
+}
+
+
+
+// FLIP IN-OUT ANIM
+@keyframes flipIn {
+  0%   {transform: rotateY(0deg);}
+  100% {transform: rotateY(90deg);}
+}
+@keyframes flipOut {
+  0% {transform: rotateY(90deg);}
+  100%   {transform: rotateY(0deg);}
+}
+@mixin flipIn_animation($time){
+  -webkit-animation: flipIn $time ease-in-out;
+  -moz-animation: flipIn $time ease-in-out;
+  -o-animation: flipIn $time ease-in-out;
+  animation: flipIn $time ease-in-out;
+}
+@mixin flipOut_animation($time){
+  -webkit-animation: flipOut $time ease-in-out;
+  -moz-animation: flipOut $time ease-in-out;
+  -o-animation: flipOut $time ease-in-out;
+  animation: flipOut $time ease-in-out;
+}
+.flipIn-anim{
+  @include flipIn_animation(.15s);
+}
+.flipOut-anim{
+  @include flipOut_animation(.15s);
+}
+
+
+// BAD INPUT ANIM
+@keyframes badInput {
+  0% { position: relative; left: 10px; }
+  25% { left: -10px; }
+  50% { left: 10px; }
+  75% { left: -10px; }
+  100% { left: 0; position: initial; }
+}
+@mixin badInput_animation($time){
+  -webkit-animation: badInput $time ease-in-out;
+  -moz-animation: badInput $time ease-in-out;
+  -o-animation: badInput $time ease-in-out;
+  animation: badInput $time ease-in-out;
+}
+.badInput_anim{
+  @include badInput_animation(.4s);
+}
+
+
+// DROPDOWN
+.dropdownIn-anim{
+  opacity: 1;
+  transform: scale3d(1,1,1) !important ;
+  @include transition(opacity 0.5s, transform 0.5s);
+}
+.dropdownOut-anim{
+  opacity: 0;
+  transform: scale3d(1,0,1);
+  @include transition(opacity 0.5s, transform 0.5s);
+}
+
+// SIDENAVBAR
+.sidenavIn-anim{
+  //opacity: 1;
+  transform: translate(0px) !important ;
+  @include transition(opacity 0.3s, transform 0.3s);
+}
+.sidenavOut-anim{
+  //opacity: 0;
+  transform: translate(-300px);
+  @include transition(opacity 0.3s, transform 0.3s);
+}
+
+// OPACITY
+.opacityIn-anim{
+  opacity: 0.3 !important;
+  @include transition(opacity 0.5s);
+
+}
+.opacityOut-anim{
+  opacity: 0;
+  @include transition(opacity 0.5s);
+}
