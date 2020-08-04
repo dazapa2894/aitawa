@@ -114,17 +114,47 @@
 
       $posts = new WP_Query($args);
       $noPost = 0;
+      $totalForColumn = (wp_count_posts()->publish)/4;
+      $numberForColumn = explode(".", strval($totalForColumn));
+      $col4 = $numberForColumn[0];
+      $noColumn = 1;
       $newColumn = false;
+
+      if ($numberForColumn[1]) {
+        $num1 = intval($numberForColumn[0]);
+        $num2 = intval($numberForColumn[1]);
+        switch ($num2) {
+          
+          case '75':
+            $limit = $col1 = $col2 = $col3 = $num1+1;
+          break;
+          case '5':
+            $limit = $col1 = $col2 = $num1+1;
+            $col3 = $num1;
+          break;
+          case '25':
+            $limit = $col1 = $num1+1;
+            $col2 = $col3 = $num1;
+          break;
+          
+          default:
+            # code...
+          break;
+        }
+      }else{
+        $col1 = $col2 = $col3 = $limit = $numberForColumn[0];
+      }
 
       // Content display
       if ($posts->have_posts()) : ?>
 
-        <div class="blogs-wrapper">
+        <div class="blogs-wrapper blog1">
 
-          <?php while ($posts->have_posts()) : $posts->the_post();
-            $noPost++;
+          <?php 
+          while ($posts->have_posts()) : $posts->the_post(); 
+          
           ?>
-            <?php if ($noPost < 3) :
+            <?php if ($noPost < $limit) :
               $newColumn = false;
             ?>
               <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
@@ -144,35 +174,56 @@
 
               </a><!-- end blog-wrap -->
             <?php else :
-              $noPost = 1;
+              $noPost = 0;
               $newColumn = true;
             endif;
             ?>
-            <?php if ($newColumn) : ?>
+            <?php
+            if ($newColumn) :
 
-        </div><!-- end blogs-wrapper -->
+              $noColumn++; 
 
-        <div class="blogs-wrapper">
+              switch ($noColumn) {
+                case 2:
+                  $limit = $col2;
+                break;
+                case 3:
+                  $limit = $col3;
+                break;
+                case 4:
+                  $limit = $col4;
+                break;
+                
+                default:
+                  # code...
+                  break;
+              }
+            ?>
 
-          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
+              </div><!-- end blogs-wrapper -->
 
-            <div class="blog-image crop-padre">
-              <?php the_post_thumbnail('large'); ?>
-            </div>
+              <div class="blogs-wrapper blog<?=$noColumn?>">
 
-            <div class="blog-info">
-              <div class="image-behind"></div>
-              <div class="blog-title">
-                <h2><?php the_title(); ?></h2>
-              </div>
-              <?php the_excerpt(); ?>
-            </div>
-            <img class="bolg-dot" src="" alt="DOT" />
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="blog-wrap">
 
-          </a><!-- end blog-wrap -->
+                  <div class="blog-image crop-padre">
+                    <?php the_post_thumbnail('large'); ?>
+                  </div>
 
-        <?php endif ?>
-      <?php endwhile; ?>
+                  <div class="blog-info">
+                    <div class="image-behind"></div>
+                    <div class="blog-title">
+                      <h2><?php the_title(); ?></h2>
+                    </div>
+                    <?php the_excerpt(); ?>
+                  </div>
+                  <img class="bolg-dot" src="" alt="DOT" />
+
+                </a><!-- end blog-wrap -->
+
+            <?php endif ?>
+            <?php $noPost++; ?>
+          <?php endwhile; ?>
 
         </div>
 
