@@ -276,7 +276,7 @@ jQuery(document).ready(function ($) {
 
   $(window).scroll(function(){
     let header = $('#top-bar').height();
-    let navbar = $('#nav-bar');
+    let navbar = $('#nav-bar1');
     if ($(this).scrollTop() >= header) {
       navbar.css('margin-top','0');
       navbar.css('position','fixed');

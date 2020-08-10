@@ -13,9 +13,8 @@ Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, 
 Text Domain: Saki - Ilvalle
 */
 
-
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Work+Sans:300,400,700');
-@import 'helpers/helpers.less';
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web|Work+Sans:300,400,700");
+@import "helpers/helpers.less";
 
 * {
   box-sizing: border-box;
@@ -23,7 +22,7 @@ Text Domain: Saki - Ilvalle
 
 body {
   background-color: @white;
-  font-family: 'AvenirNext', sans-serif;
+  font-family: "AvenirNext", sans-serif;
 }
 
 ul {
@@ -31,29 +30,25 @@ ul {
     list-style: none;
   }
 }
-p{
+p {
   line-height: 1.5;
   font-size: 16px;
 }
 
-main{
-padding: 0 20px;
-}
-
 //Header
-@import 'parts/header.less';
+@import "parts/header.less";
 //Index.php
-@import 'parts/footer.less';
+@import "parts/footer.less";
 //Index.php
-@import 'parts/index.less';
+@import "parts/index.less";
 //Sidebar.php
-@import 'parts/sidebar.less';
+@import "parts/sidebar.less";
 //Sidebar.php
-@import 'parts/single.less';
+@import "parts/single.less";
 //Sidebar.php
-@import 'parts/page.less';
+@import "parts/page.less";
 //Comments.php
-@import 'parts/comments.less';
+@import "parts/comments.less";
 
 //Clases compartidas
 .big-title {
@@ -128,7 +123,7 @@ padding: 0 20px;
             padding: 50px 30px 10px 30px;
             width: fit-content;
 
-            @media(min-width:600px) {
+            @media (min-width: 600px) {
               max-width: 400px;
               right: 10%;
             }
@@ -140,7 +135,7 @@ padding: 0 20px;
               font-size: 30px;
               font-weight: 300;
 
-              @media(min-width:600px) {
+              @media (min-width: 600px) {
                 font-size: 42px;
               }
 
@@ -148,7 +143,7 @@ padding: 0 20px;
                 display: block;
                 font-size: 48px;
 
-                @media(min-width:600px) {
+                @media (min-width: 600px) {
                   font-size: 60px;
                 }
               }
@@ -195,7 +190,6 @@ padding: 0 20px;
           height: auto;
         }
       }
-
     }
 
     .product-info {
@@ -272,8 +266,7 @@ padding: 0 20px;
             h2 {
               font-size: 18px;
               margin: 0;
-              font-family: AvenirNext,
-                sans-serif;
+              font-family: AvenirNext, sans-serif;
               color: @black;
             }
           }
@@ -296,12 +289,40 @@ padding: 0 20px;
   }
 }
 
-#nav-bar{
+#nav-bar1 {
+  // border: 1px solid;
+  padding: 15px;
   position: absolute;
   margin-top: 88px;
   z-index: 1;
   background-color: white;
-  width: 230px;
+  width: 270px;
+  height: 500px;
+  .social-wrapper {
+    display: grid;
+    grid-template-columns: 35px 35px 35px;
+    grid-template-rows: 35px;
+    img {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .nav-logo{
+    margin: 25px 0px;
+  }
+}
+
+#nav-bar2{
+  // border: 1px solid;
+  padding: 15px;
+  position: absolute;
+  margin-top: 88px;
+  z-index: 1;
+  background-color: white;
+  width: 270px;
   height: 500px;
 }
 
@@ -334,7 +355,8 @@ padding: 0 20px;
 }
 
 //Productos
-#product-image {}
+#product-image {
+}
 
 .product-content {
   padding: 50px 20px;
@@ -347,84 +369,83 @@ padding: 0 20px;
     margin: 0 0 30px 0;
 
     &:before {
-      content: url('../Aitawa-theme/assets/img/dot.svg');
-         height: 40px;
-         width: 40px;
-         margin-right: 15px;
+      content: url("../Aitawa-theme/assets/img/dot.svg");
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
     }
   }
 
   h3 {
-    color:@yellow;
-     font-size: 60px;
-     margin: 0 0 30px 0;
-     font-family: 'IBMPlexSans', sans-serif;
+    color: @yellow;
+    font-size: 60px;
+    margin: 0 0 30px 0;
+    font-family: "IBMPlexSans", sans-serif;
   }
 
   h4 {
-     font-size: 40px;
-     margin: 0 0 30px 0;
+    font-size: 40px;
+    margin: 0 0 30px 0;
   }
 
   h5 {
-     font-size: 40px;
-     margin: 0 0 30px 0;
+    font-size: 40px;
+    margin: 0 0 30px 0;
   }
 
   h6 {
-     font-size: 40px;
-     margin: 0 0 30px 0;
+    font-size: 40px;
+    margin: 0 0 30px 0;
   }
 }
 
-
-.woocommerce-product-gallery{
-  float: none!important;
-    width: 100% !important;
+.woocommerce-product-gallery {
+  float: none !important;
+  width: 100% !important;
 }
-.summary{
-  float: none!important;
-  width: 100%!important;
+.summary {
+  float: none !important;
+  width: 100% !important;
 }
-.product-image{
+.product-image {
   .product-info {
-       position: absolute;
-       bottom: 0;
-       right: 0;
-       background-color: rgba(0, 0, 0, 0.7);
-       max-width: 300px;
-       height: 380px;
-       padding: 50px 30px 10px 30px;
-       width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 300px;
+    height: 380px;
+    padding: 50px 30px 10px 30px;
+    width: fit-content;
 
-       @media(min-width:600px) {
-         max-width: 400px;
-         right: 10%;
-       }
- h3 {
-   color: @yellow;
-   margin: 0 0 20px 0;
-   text-transform: uppercase;
-   font-size: 30px;
-   font-weight: 300;
+    @media (min-width: 600px) {
+      max-width: 400px;
+      right: 10%;
+    }
+    h3 {
+      color: @yellow;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 300;
 
-   @media(min-width:600px) {
-     font-size: 42px;
-   }
+      @media (min-width: 600px) {
+        font-size: 42px;
+      }
 
-   b {
-     display: block;
-     font-size: 48px;
+      b {
+        display: block;
+        font-size: 48px;
 
-     @media(min-width:600px) {
-       font-size: 60px;
-     }
-   }
- }
+        @media (min-width: 600px) {
+          font-size: 60px;
+        }
+      }
+    }
 
- p {
-   color: @white;
-   line-height: 1.3;
- }
+    p {
+      color: @white;
+      line-height: 1.3;
+    }
   }
 }

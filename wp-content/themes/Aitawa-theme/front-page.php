@@ -5,8 +5,44 @@
 
 <main>
 
-  <section id="nav-bar">
-    
+  <section id="nav-bar2">
+
+  </section>
+  
+  <section id="nav-bar1">
+    <div class="social-wrapper">
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/whatsapp-icon.svg" alt="">
+      </a>
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/facebook-icon.svg" alt="">
+      </a>
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/instagram-icon.svg" alt="">
+      </a>
+    </div>
+
+    <div class="nav-logo">
+      <img src="<?php echo $url_theme ?>/assets/img/aitawa-logo.svg" alt="Aitawa logo" />
+    </div>
+
+    <div class="nav-menu">
+      <a href="">
+        <?php wp_nav_menu(array(
+          'menu_class' => 'page_item',
+          'menu_id' => 'menu',
+          'container' => 'ul',
+          'theme_location' => 'header-menu',
+        )); ?>
+      </a>
+    </div>
+
+    <div class="container-new">
+      <a href="" class="candado">
+        <img src="<?php echo $url_theme ?>/assets/img/candado.png" alt="Candado">
+        <p>Regístrate</p>
+      </a>
+    </div>
   </section>
 
   <section id="top-bar">
