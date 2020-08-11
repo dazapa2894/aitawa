@@ -1,0 +1,88 @@
+2020-08-11T14:07:02+00:00 CRITICAL syntax error, unexpected ';', expecting ')' en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\functions.php en la línea 131
+
+2020-08-11T19:56:51+00:00 CRITICAL Uncaught Error: Call to undefined function money_format() in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:87
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHO en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 87
+
+2020-08-11T19:59:29+00:00 CRITICAL Uncaught Error: Class 'NumberFormatter' not found in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\ en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:04:59+00:00 CRITICAL Cannot redeclare toMoney() (previously declared in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:07:05+00:00 CRITICAL Cannot redeclare toMoney() (previously declared in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:07:15+00:00 CRITICAL Cannot redeclare toMoney() (previously declared in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:07:45+00:00 CRITICAL Cannot redeclare toMoney() (previously declared in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:08:20+00:00 CRITICAL Cannot redeclare toMoney() (previously declared in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:86) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 86
+
+2020-08-11T20:09:16+00:00 CRITICAL syntax error, unexpected '$number' (T_VARIABLE) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 90
+
+2020-08-11T20:09:46+00:00 CRITICAL Uncaught Error: Call to undefined function money_format() in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:91
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHO en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 91
+
+2020-08-11T20:10:16+00:00 CRITICAL Uncaught Error: Call to undefined function money_format() in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:91
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHO en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 91
+
+2020-08-11T20:23:00+00:00 CRITICAL Uncaught Error: Using $this when not in object context in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\class-wc-structured-data.php:328
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php(104): WC_Structured_Data::generate_product_data()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require('E:\\Users\\dazap\\...')
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\class-wc-structured-data.php en la línea 328
+
+2020-08-11T21:02:03+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 90
+
+2020-08-11T21:02:08+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 90
+
+2020-08-11T21:02:41+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 89
+
+2020-08-11T21:03:58+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 89
+
+2020-08-11T21:04:35+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 89
+
+2020-08-11T21:05:31+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on bool in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:80
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOC en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 80
+
+2020-08-11T21:06:02+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 91
+
+2020-08-11T21:07:44+00:00 CRITICAL Uncaught Error: Function name must be a string in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php:69
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require()
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template-loader.php(106): include('E:\\Users\\dazap\\...')
+#4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
+#5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\ait en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 69
+

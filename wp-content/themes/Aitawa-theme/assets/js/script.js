@@ -261,6 +261,14 @@ jQuery(document).ready(function ($) {
     nextArrow: '<i class="fas fa-chevron-right arrow-right"></i>',
   });
 
+  $('.product-slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1, 
+    prevArrow: $('.prev'),
+    nextArrow: $('.next')
+  });
+
   //Acá se resolverán el tema del menú lateral izquierdo
 
   moves = {

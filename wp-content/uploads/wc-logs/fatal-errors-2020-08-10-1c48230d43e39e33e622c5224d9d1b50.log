@@ -1,0 +1,9 @@
+2020-08-10T21:42:57+00:00 CRITICAL syntax error, unexpected 'PUTO' (T_STRING) en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 2
+
+2020-08-10T21:49:14+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_action(), 1 passed in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php on line 45 and at least 2 expected in E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\plugin.php:583
+Stack trace:
+#0 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php(45): remove_action('woocommerce_bef...')
+#1 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\template.php(725): require('E:\\Users\\dazap\\...')
+#2 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\Users\\dazap\\...', false)
+#3 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(598): wc_get_template en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-includes\plugin.php en la línea 583
+

@@ -116,10 +116,53 @@ function custom_comments($comment, $args, $depth)
     echo '    <div class="separador-comentario"></div>';
     echo '  </div>';
     echo '</li>';
+}
+
+function add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'add_woocommerce_support' );
+
+//Remove action woocmmerce template
+remove_action('woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20);
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
+add_action('woocommerce_before_single_product_summary', 'show_product_images_slider', 20);
+function show_product_images_slider()
+{
+  
+  global $product;
+
+
+  $html  = '<div id="product-slider-wrapper">';
+  $html  .=   '<div class="product-slider">';
+
+// $html .=   '<div><img src="' . wp_get_attachment_url($product->get_image_id()) . '" /></div>';
+  
+  $html .=   '<div class="product-slide" style="background-image: url('. wp_get_attachment_url($product->get_image_id()) .')">';
+  $html .=   '</div><!-- end home slide -->';
+  
+  foreach ($product->get_gallery_image_ids() as $key => $value) {
+    $html .=   '<div class="product-slide" style="background-image: url(' . wp_get_attachment_url($value) . ')">';
+    $html .=   '</div><!-- end home slide -->';
   }
 
-  //Remove action woocmmerce template
-  remove_action('woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20);
+  $html .=   '</div>'; //slider
 
+  $html .=   '<div class="product-slide-info">';
+  $html .=     '<h2>';
+  $html .=       $product->get_name();
+  $html .=     '</h2>';
+  $html .=     '<p>';
+  $html .=       $product->get_description();
+  $html .=     '</p>';
+  $html .=     '<div class="prev"></div>';
+  $html .=     '<div class="next"></div>';
 
-    ?>
+  $html .=   '</div>';
+
+  $html .= '</div>'; //wrapper
+
+  echo $html;
+} 
+
+?>
