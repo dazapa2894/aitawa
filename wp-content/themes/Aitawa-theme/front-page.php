@@ -6,11 +6,27 @@
 <main>
 
   <section id="nav-bar2">
-
+    <div class="container-btn boton-area">
+      <a href="" class="menu nav-btn">
+        <img src="<?php echo $url_theme ?>/assets/img/menu.svg" alt="Menu">
+        <p>Menu</p>
+      </a>
+    </div>
+    <div class="social-wrapper redes-area">
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/whatsapp-icon.svg" alt="">
+      </a>
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/facebook-icon.svg" alt="">
+      </a>
+      <a href="">
+        <img src="<?php echo $url_theme ?>/assets/img/instagram-icon.svg" alt="">
+      </a>
+    </div>
   </section>
-  
-  <section id="nav-bar1">
-    <div class="social-wrapper">
+
+  <section id="nav-bar1" style="display: none;">
+    <div class="social-wrapper redes-area">
       <a href="">
         <img src="<?php echo $url_theme ?>/assets/img/whatsapp-icon.svg" alt="">
       </a>
@@ -22,11 +38,11 @@
       </a>
     </div>
 
-    <div class="nav-logo">
+    <div class="nav-logo logo-area">
       <img src="<?php echo $url_theme ?>/assets/img/aitawa-logo.svg" alt="Aitawa logo" />
     </div>
 
-    <div class="nav-menu">
+    <div class="nav-menu links-area">
       <a href="">
         <?php wp_nav_menu(array(
           'menu_class' => 'page_item',
@@ -37,8 +53,8 @@
       </a>
     </div>
 
-    <div class="container-new">
-      <a href="" class="candado">
+    <div class="container-btn boton-area">
+      <a href="" class="candado nav-btn">
         <img src="<?php echo $url_theme ?>/assets/img/candado.png" alt="Candado">
         <p>Regístrate</p>
       </a>
