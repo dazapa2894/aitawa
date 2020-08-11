@@ -153,7 +153,7 @@
       <div class="col xs12 s12 m12 l10 xl10 offset-l2 offset-xl2">
         <div class="big-title">
           <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
-          <h2>Nuestros productos</h2>
+          <h2>Novedades para descubrir</h2>
         </div><!-- end big title -->
       </div>
     </div>
@@ -193,7 +193,7 @@
                 </div>
                 <?php the_excerpt(); ?>
               </div>
-              <img class="bolg-dot" src="" alt="DOT" />
+              <img class="bolg-dot" src="<?php echo $url_theme ?>assets/img/dot.svg" alt="DOT" />
 
             </a><!-- end blog-wrap -->
 

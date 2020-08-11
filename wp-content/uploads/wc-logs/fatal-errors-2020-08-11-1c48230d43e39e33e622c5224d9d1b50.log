@@ -86,3 +86,25 @@ Stack trace:
 #4 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-blog-header.php(19): require_once('E:\\Users\\dazap\\...')
 #5 E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\ait en E:\Users\dazap\Documents\DOCUMENTOS OFICINA\_LOCALHOST\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php en la línea 69
 
+2020-08-11T22:58:37+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Query as array in E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php:3271
+Stack trace:
+#0 E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php(3300): WP_Query->next_post()
+#1 E:\xampp\htdocs\team\aitawa\wp-includes\query.php(970): WP_Query->the_post()
+#2 E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\index.php(72): the_post()
+#3 E:\xampp\htdocs\team\aitawa\wp-includes\template-loader.php(106): include('E:\\xampp\\htdocs...')
+#4 E:\xampp\htdocs\team\aitawa\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#5 E:\xampp\htdocs\team\aitawa\index.php(17): require('E:\\xampp\\htdocs...')
+#6 {main}
+  thrown en E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php en la línea 3271
+
+2020-08-11T22:58:38+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Query as array in E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php:3271
+Stack trace:
+#0 E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php(3300): WP_Query->next_post()
+#1 E:\xampp\htdocs\team\aitawa\wp-includes\query.php(970): WP_Query->the_post()
+#2 E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\index.php(72): the_post()
+#3 E:\xampp\htdocs\team\aitawa\wp-includes\template-loader.php(106): include('E:\\xampp\\htdocs...')
+#4 E:\xampp\htdocs\team\aitawa\wp-blog-header.php(19): require_once('E:\\xampp\\htdocs...')
+#5 E:\xampp\htdocs\team\aitawa\index.php(17): require('E:\\xampp\\htdocs...')
+#6 {main}
+  thrown en E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-query.php en la línea 3271
+
