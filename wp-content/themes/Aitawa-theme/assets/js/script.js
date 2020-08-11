@@ -275,16 +275,19 @@ jQuery(document).ready(function ($) {
   };
 
   $(window).scroll(function(){
-    let header = $('#top-bar').height();
+    let header = $('#top-bar');
+    let padd_top = parseInt($('#top-bar').css('padding-top'));
+    let padd_bot = parseInt($('#top-bar').css('padding-bottom'));
+    let header_height =  parseInt(header.height()) + padd_top + padd_bot;
     let navbar = $('#nav-bar1');
-    if ($(this).scrollTop() >= header) {
+    if ($(this).scrollTop() >= header_height) {
       navbar.css('margin-top','0');
       navbar.css('position','fixed');
     }else{
-      navbar.css('margin-top','88px');
+      navbar.css('margin-top', header_height);
       navbar.css('position','absolute');
     }
-    console.log($(this));
+    console.log(header_height);
     // content.ontouchstart = function (e) {
     //   moves.initial = {
     //     x: e.changedTouches[0].clientX,
