@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
   console.log(elem);
   var iso = new Isotope(elem, {
     // options
+    originLeft: false,
     itemSelector: ".blogs-wrapper",
     layoutMode: "masonry",
     masonry: {
