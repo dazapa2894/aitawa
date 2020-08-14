@@ -262,12 +262,12 @@ jQuery(document).ready(function ($) {
     nextArrow: '<i class="fas fa-chevron-right arrow-right"></i>',
   });
 
-  $('.product-slider').slick({
+  $(".product-slider").slick({
     infinite: true,
     slidesToShow: 1,
-    slidesToScroll: 1, 
-    prevArrow: $('.prev'),
-    nextArrow: $('.next')
+    slidesToScroll: 1,
+    prevArrow: $(".prev"),
+    nextArrow: $(".next"),
   });
 
   //Acá se resolverán el tema del menú lateral izquierdo
@@ -283,25 +283,72 @@ jQuery(document).ready(function ($) {
     },
   };
 
-  $(window).scroll(function(){
-    let header = $('#top-bar');
-    let padd_top = parseInt($('#top-bar').css('padding-top'));
-    let padd_bot = parseInt($('#top-bar').css('padding-bottom'));
-    let header_height =  parseInt(header.height()) + padd_top + padd_bot;
-    let navbar = $('#nav-bar1');
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  let menuBig = true;
+  //let menuToSmall = false;
+  let header = $("#top-bar");
+  let padd_top = parseInt($("#top-bar").css("padding-top"));
+  let padd_bot = parseInt($("#top-bar").css("padding-bottom"));
+  let header_height = parseInt(header.height()) + padd_top + padd_bot;
+  let navbar = $("#nav-bar");
+  let navbar_1 = $("#nav-bar .content_max");
+  let navbar_2 = $("#nav-bar .content_min");
+
+  $(window).scroll(async function () {
     if ($(this).scrollTop() >= header_height) {
-      navbar.css('margin-top','0');
-      navbar.css('position','fixed');
-    }else{
-      navbar.css('margin-top', header_height);
-      navbar.css('position','absolute');
+      navbar.css("margin-top", "0");
+      navbar.css("position", "fixed");
+
+      if ($(window).scrollTop() > 300) {
+        if (menuBig) {
+          // Animación volver chiquito el menu
+          navbar_1.css("opacity", "0");
+          navbar_1.css("display", "none");
+          navbar.css("width", "150px");
+          navbar.css("height", "200px");
+          setTimeout(() => {
+            navbar_2.css("opacity", "1");
+            navbar_2.css("display", "grid");
+          }, 500);
+          menuBig = false;
+        }
+      }
+    } else {
+      navbar.css("margin-top", header_height);
+      navbar.css("position", "absolute");
     }
-    console.log(header_height);
-    // content.ontouchstart = function (e) {
-    //   moves.initial = {
-    //     x: e.changedTouches[0].clientX,
-    //     y: e.changedTouches[0].clientY,
-    //   };
-    // };
+
+    if ($(window).scrollTop() == 0) {
+      if (!menuBig) {
+        // Animación de volver grande el menú
+        navbar_2.css("opacity", "0");
+        navbar_2.css("display", "none");
+        navbar.css("width", "270px");
+        navbar.css("height", "500px");
+        setTimeout(() => {
+          navbar_1.css("opacity", "1");
+          navbar_1.css("display", "grid");
+        }, 500);
+        menuBig = true;
+      }
+    }
+  });
+
+  $("#menu").click(function () {
+    if (!menuBig) {
+      // Animación de volver grande el menú
+      navbar_2.css("opacity", "0");
+      navbar_2.css("display", "none");
+      navbar.css("width", "270px");
+      navbar.css("height", "500px");
+      setTimeout(() => {
+        navbar_1.css("opacity", "1");
+        navbar_1.css("display", "grid");
+      }, 500);
+      menuBig = true;
+    }
   });
 }); // End document ready

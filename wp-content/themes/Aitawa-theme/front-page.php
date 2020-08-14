@@ -5,62 +5,6 @@
 
 <main>
 
-  <section id="nav-bar2">
-    <div class="container-btn boton-area">
-      <a href="" class="menu nav-btn">
-        <img src="<?php echo $url_theme ?>/assets/img/menu.svg" alt="Menu">
-        <p>Menu</p>
-      </a>
-    </div>
-    <div class="social-wrapper redes-area">
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/whatsapp-icon.svg" alt="">
-      </a>
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/facebook-icon.svg" alt="">
-      </a>
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/instagram-icon.svg" alt="">
-      </a>
-    </div>
-  </section>
-
-  <section id="nav-bar1" style="display: none;">
-    <div class="social-wrapper redes-area">
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/whatsapp-icon.svg" alt="">
-      </a>
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/facebook-icon.svg" alt="">
-      </a>
-      <a href="">
-        <img src="<?php echo $url_theme ?>/assets/img/instagram-icon.svg" alt="">
-      </a>
-    </div>
-
-    <div class="nav-logo logo-area">
-      <img src="<?php echo $url_theme ?>/assets/img/aitawa-logo.svg" alt="Aitawa logo" />
-    </div>
-
-    <div class="nav-menu links-area">
-      <a href="">
-        <?php wp_nav_menu(array(
-          'menu_class' => 'page_item',
-          'menu_id' => 'menu',
-          'container' => 'ul',
-          'theme_location' => 'header-menu',
-        )); ?>
-      </a>
-    </div>
-
-    <div class="container-btn boton-area">
-      <a href="" class="candado nav-btn">
-        <img src="<?php echo $url_theme ?>/assets/img/candado.png" alt="Candado">
-        <p>Regístrate</p>
-      </a>
-    </div>
-  </section>
-
   <section id="top-bar">
     <div class="row no-margin">
       <div class="col xs12 s12 m12 l6 xl6">

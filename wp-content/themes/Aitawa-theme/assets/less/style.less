@@ -20,8 +20,6 @@ Text Domain: Saki - Ilvalle
   box-sizing: border-box;
 }
 
-
-
 body {
   background-color: @white;
   font-family: "AvenirNext", sans-serif;
@@ -163,8 +161,6 @@ p {
   }
 }
 
-
-
 #home-nuestros-productos {
   padding: 50px 0;
 
@@ -228,13 +224,13 @@ p {
       width: 310px;
       min-width: 310px;
       max-width: 350px;
-      -webkit-transition: all .1s linear;
-      transition: all .1s linear;
+      -webkit-transition: all 0.1s linear;
+      transition: all 0.1s linear;
 
       &:hover {
         transform: translateY(-5px);
-        -webkit-transition: all .1s linear;
-        transition: all .1s linear;
+        -webkit-transition: all 0.1s linear;
+        transition: all 0.1s linear;
       }
 
       &:nth-child(2) {
@@ -319,15 +315,8 @@ p {
   grid-area: boton;
 }
 
-#nav-bar1 {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 10% 30% auto 13%;
-  grid-template-areas:
-    "redes"
-    "logo"
-    "links"
-    "boton";
+#nav-bar {
+  transition: height 0.5s linear, width 0.5s linear;
   padding: 15px;
   position: absolute;
   margin-top: 88px;
@@ -335,76 +324,115 @@ p {
   background-color: white;
   width: 270px;
   height: 500px;
-
-  .social-wrapper {
+  .content_max {
+    transition: opacity 0.5s linear;
+    opacity: 1;
     display: grid;
-    grid-template-columns: 35px 35px 35px;
-    grid-template-rows: 35px;
-
-    img {
+    grid-template-columns: auto;
+    grid-template-rows: 10% 30% auto 13%;
+    grid-template-areas:
+      "redes"
+      "logo"
+      "links"
+      "boton";
+    height: 100%;
+    .social-wrapper {
       display: grid;
-      width: 30px;
-      height: 30px;
-      justify-self: center;
-      align-self: center;
+      grid-template-columns: 35px 35px 35px;
+      grid-template-rows: 35px;
+      img {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        justify-self: center;
+        align-self: center;
+      }
+    }
+    .nav-logo {
+      margin: 25px 0px;
+    }
+    .container-btn {
+      .nav-btn {
+        margin: 0;
+        width: 100%;
+      }
     }
   }
+  .content_min {
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+      "boton"
+      "redes";
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    .social-wrapper {
+      display: grid;
+      grid-template-columns: 35px 35px 35px;
+      grid-template-rows: 35px;
+      margin: auto;
 
-  .nav-logo {
-    margin: 25px 0px;
-  }
+      img {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        justify-self: center;
+        align-self: center;
+      }
+    }
 
-  .container-btn {
-    .nav-btn {
-      margin: 0;
-      width: 100%;
+    .container-btn {
+      display: grid;
+      align-items: stretch;
+      justify-items: stretch;
+
+      .menu {
+        cursor: pointer;
+        background-color: @green;
+        margin: auto;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 15px 30px;
+        text-align: center;
+        border-radius: 5px;
+
+        p {
+          padding-top: 5px;
+        }
+      }
     }
   }
 }
 
-#nav-bar2 {
-  // border: 1px solid;
-  padding: 15px;
-  position: absolute;
-  margin-top: 88px;
-  z-index: 1;
-  background-color: white;
-  width: 150px;
-  height: 200px;
+.candado {
+  background-color: @green;
+  color: @white;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 10px auto 80px auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: fit-content;
+  border-radius: 5px;
 
-  .social-wrapper {
-    display: grid;
-    grid-template-columns: 35px 35px 35px;
-    grid-template-rows: 35px;
-    margin: auto;
-
-    img {
-      display: grid;
-      width: 30px;
-      height: 30px;
-      justify-self: center;
-      align-self: center;
-    }
+  &:hover {
+    background-color: @light-black;
   }
 
-  .container-btn {
-    display: grid;
-    align-items: stretch;
-    justify-items: stretch;
+  img {
+    margin: 0 10px 0 0;
+    height: 40px;
+  }
 
-    .menu {
-      background-color: @green;
-      margin: auto;
-      color: #fff;
-      text-transform: uppercase;
-      padding: 15px 30px;
-      text-align: center;
-      border-radius: 5px;
-
-      p {
-        padding-top: 5px;
-      }
-    }
+  p {
+    margin-top: 10px;
   }
 }
 
@@ -440,7 +468,7 @@ p {
       display: block;
       height: 40px;
       width: 40px;
-      background: url('assets/img/arrow-left.svg') no-repeat;
+      background: url("assets/img/arrow-left.svg") no-repeat;
       position: absolute;
       bottom: 15px;
       left: 20px;
@@ -451,7 +479,7 @@ p {
       display: block;
       height: 40px;
       width: 40px;
-      background: url('assets/img/arrow-right.svg') no-repeat;
+      background: url("assets/img/arrow-right.svg") no-repeat;
       position: absolute;
       bottom: 15px;
       right: 20px;
@@ -519,13 +547,13 @@ p {
   .frase {
     h3 {
       font-size: 3.5em;
-      color: #FFAC01;
+      color: #ffac01;
     }
   }
 
   .variaciones {
     height: 200px;
-    border: 1px solid #57A11C;
+    border: 1px solid #57a11c;
     border-radius: 10px;
     width: 100%;
     display: flex;
@@ -545,20 +573,17 @@ p {
 
         //#precio {}
       }
-
-
     }
 
     &-simple {
       height: 100px;
-      border: 1px solid #57A11C;
+      border: 1px solid #57a11c;
       border-radius: 10px;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       max-width: 450px;
-
     }
   }
 
