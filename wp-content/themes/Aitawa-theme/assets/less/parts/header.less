@@ -1,1 +1,138 @@
 //main: ../style.less
+.logo-area {
+    grid-area: logo;
+}
+
+.redes-area {
+    grid-area: redes;
+}
+
+.links-area {
+    grid-area: links;
+}
+
+.boton-area {
+    grid-area: boton;
+}
+
+#nav-bar1 {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10% 30% auto 13%;
+    grid-template-areas:
+        "redes"
+        "logo"
+        "links"
+        "boton";
+    padding: 15px;
+    position: absolute;
+    margin-top: 88px;
+    z-index: 1;
+    background-color: white;
+    width: 270px;
+    height: 500px;
+
+    .social-wrapper {
+        display: grid;
+        grid-template-columns: 35px 35px 35px;
+        grid-template-rows: 35px;
+
+        img {
+            display: grid;
+            width: 30px;
+            height: 30px;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .nav-logo {
+        margin: 25px 0px;
+    }
+
+    .container-btn {
+        .nav-btn {
+            margin: 0;
+            width: 100%;
+        }
+    }
+}
+
+#nav-bar2 {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+        "boton"
+        "redes";
+    padding: 15px;
+    position: absolute;
+    margin-top: 88px;
+    z-index: 1;
+    background-color: white;
+    width: 150px;
+    height: 200px;
+
+    .social-wrapper {
+        display: grid;
+        grid-template-columns: 35px 35px 35px;
+        grid-template-rows: 35px;
+        margin: auto;
+
+        img {
+            display: grid;
+            width: 30px;
+            height: 30px;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .container-btn {
+        display: grid;
+        align-items: stretch;
+        justify-items: stretch;
+
+        .menu {
+            background-color: @green;
+            margin: auto;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            text-align: center;
+            border-radius: 5px;
+
+            p {
+                padding-top: 5px;
+            }
+        }
+    }
+}
+
+.candado {
+    background-color: @green;
+    color: @white;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 10px auto 80px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: @light-black;
+    }
+
+    img {
+        margin: 0 10px 0 0;
+        height: 40px;
+    }
+
+    p {
+        margin-top: 10px;
+    }
+}

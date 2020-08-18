@@ -148,12 +148,12 @@ function show_product_images_slider()
 
   $html .=   '</div>'; //slider
 
-  $html .=   '<div class="product-slide-info">';
+  $html .=   '<div class="product-slide-info">'; 
   $html .=     '<h2>';
   $html .=       $product->get_name();
   $html .=     '</h2>';
   $html .=     '<p>';
-  $html .=       $product->get_description();
+  $html .=       get_field('descripcion_del_slider');
   $html .=     '</p>';
   $html .=     '<div class="prev"></div>';
   $html .=     '<div class="next"></div>';
