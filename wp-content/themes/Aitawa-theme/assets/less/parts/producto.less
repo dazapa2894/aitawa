@@ -1,0 +1,649 @@
+//main: ../style.less
+//Productos
+.product {
+  .onsale {
+    top: 25px !important;
+    left: 25px !important;
+    height: 100px;
+    width: 100px;
+    font-size: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: @green  !important;
+  }
+}
+
+#product-slider-wrapper {
+  position: relative;
+
+  .product-slider {
+    .product-slide {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 800px;
+      position: relative;
+    }
+  }
+
+  .product-slide-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 300px;
+    height: 380px;
+    padding: 50px 30px 10px 30px;
+    width: fit-content;
+
+    @media (min-width: 600px) {
+      max-width: 400px;
+      right: 10%;
+    }
+
+    .prev {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background: url('assets/img/arrow-left.svg') no-repeat;
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      filter: brightness(100);
+    }
+
+    .next {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background: url('assets/img/arrow-right.svg') no-repeat;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      filter: brightness(100);
+    }
+
+    h2 {
+      color: @yellow;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 300;
+
+      @media (min-width: 600px) {
+        font-size: 42px;
+      }
+
+      b {
+        display: block;
+        font-size: 48px;
+
+        @media (min-width: 600px) {
+          font-size: 60px;
+        }
+      }
+    }
+
+    p {
+      color: @white;
+      line-height: 1.5;
+    }
+  }
+}
+
+#product-info-section {
+  margin-top: 30px;
+
+  @media (min-width: 600px) {
+    margin-top: 50px;
+  }
+
+  .text-content {
+    margin-bottom: 50px;
+  }
+
+  .frase {
+    color: @yellow;
+    font-size: 50px;
+    line-height: inherit;
+    margin: 10px 0 30px 0;
+    font-family: 'SilliiWillinn';
+    text-shadow: 2px 0px 0px @soft-white;
+  }
+
+  .variaciones,
+  .variaciones-simple {
+    border: 1px solid @green;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px 40px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 30px auto;
+
+    .variacion {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .item {
+        color: @gray;
+      }
+
+      #opcion {
+        position: relative;
+        width: 50% !important;
+        display: none;
+        min-width: 100px;
+
+        @media(min-width:400px) {
+          display: block;
+        }
+
+        p {
+          margin: 0 0 0 20px;
+        }
+
+        &:before {
+          content: url(../Aitawa-theme/assets/img/dot.svg);
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          top: 4px;
+          left: 0;
+        }
+      }
+
+      #tamano {
+        width: 50%;
+
+        @media(min-width:400px) {
+          width: 33%;
+        }
+      }
+
+      #precio {
+        text-align: right;
+        width: 50%;
+
+        @media(min-width:400px) {
+          width: 30%;
+        }
+      }
+
+
+    }
+
+    &-simple {
+      height: 100px;
+      border: 1px solid #57A11C;
+      border-radius: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 450px;
+
+    }
+  }
+
+  #img-wrapper {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .cart {
+    .single_add_to_cart_button {
+      background-color: @white;
+      color: @green;
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: 16px;
+
+      &:hover {
+        color: @yellow;
+      }
+    }
+  }
+
+  .variations_form {
+    .variations {
+      margin: 0;
+
+      tbody {
+        tr {
+          display: flex;
+          flex-direction: column;
+          border: none;
+
+          .label {
+            padding: 0;
+
+            label {
+              padding: 0;
+              color: #494949;
+              font-size: 16px;
+            }
+          }
+
+          .value {
+            padding-bottom: 0;
+
+            .reset_variations {
+              color: @yellow;
+              float: right;
+
+              &:hover {
+                color: @green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .single_variation_wrap {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .woocommerce-variation {
+      .woocommerce-variation-description {
+        p {
+          margin: 30px 0;
+        }
+      }
+
+      .woocommerce-variation-price {
+        .price {
+          display: block;
+          margin: 25px 0 0 0;
+          font-size: 30px;
+          color: @yellow;
+
+          del {
+            span {}
+          }
+
+          ins {
+            text-decoration: none;
+
+            span {}
+          }
+        }
+      }
+    }
+
+    .woocommerce-variation-add-to-cart {
+      display: flex;
+
+      .quantity {}
+
+      .single_add_to_cart_button {
+        background-color: @white;
+        color: @green;
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 16px;
+
+        &:hover {
+          color: @yellow;
+        }
+      }
+    }
+  }
+}
+
+
+.product-content {
+  padding: 50px 20px;
+  max-width: 1366px;
+  margin: 0 auto;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 0 30px 0;
+
+    &:before {
+      content: url("../Aitawa-theme/assets/img/dot.svg");
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+    }
+  }
+
+  h3 {
+    color: @yellow;
+    font-size: 60px;
+    margin: 0 0 30px 0;
+    font-family: "IBMPlexSans", sans-serif;
+  }
+
+  h4 {
+    font-size: 40px;
+    margin: 0 0 30px 0;
+  }
+
+  h5 {
+    font-size: 40px;
+    margin: 0 0 30px 0;
+  }
+
+  h6 {
+    font-size: 40px;
+    margin: 0 0 30px 0;
+  }
+}
+
+.woocommerce-product-gallery {
+  float: none !important;
+  width: 100% !important;
+}
+
+.summary {
+  float: none !important;
+  width: 100% !important;
+}
+
+.product-image {
+  .product-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 300px;
+    height: 380px;
+    padding: 50px 30px 10px 30px;
+    width: fit-content;
+
+    @media (min-width: 600px) {
+      max-width: 400px;
+      right: 10%;
+    }
+
+    h3 {
+      color: @yellow;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 300;
+
+      @media (min-width: 600px) {
+        font-size: 42px;
+      }
+
+      b {
+        display: block;
+        font-size: 48px;
+
+        @media (min-width: 600px) {
+          font-size: 60px;
+        }
+      }
+    }
+
+    p {
+      color: @white;
+      line-height: 1.3;
+    }
+  }
+}
+
+//Mensajes de woocommerce
+.woocommerce-message {
+  margin: 0 !important;
+  border-top-color: @green  !important;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: 20px !important;
+
+    &:hover {
+      background-color: @yellow  !important;
+      color: @white  !important;
+    }
+  }
+
+  &:before {
+    color: @green  !important;
+    top: 23px !important;
+  }
+}
+
+//Carrito
+.woocommerce {
+  padding: 0 0 100px 0;
+
+  .woocommerce-cart-form {
+    .shop_table {
+      tbody {
+        tr {
+          .product-name {
+            a {
+              color: @green;
+
+              b {
+                font-weight: normal;
+              }
+
+              &:hover {
+                color: @light-black;
+              }
+            }
+          }
+
+          .actions {
+            .coupon {
+              display: flex;
+
+              input {
+                width: 150px;
+              }
+
+              button {
+                background-color: @yellow;
+                color: @white;
+                height: 43.5px;
+
+                &:hover {
+                  background-color: @light-yellow;
+                  color: @white;
+                }
+              }
+            }
+
+            button {
+              background-color: @yellow;
+              color: @white;
+              height: 43.5px;
+
+              &:hover {
+                background-color: @light-yellow;
+                color: @white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-collaterals {
+    .cart_totals {
+      margin-top: 20px;
+
+      h2 {
+        color: @yellow;
+        font-size: 50px;
+        line-height: inherit;
+        margin: 0 0 20px 10px;
+        font-family: 'SilliiWillinn';
+        text-shadow: 2px 0 0 @light-gray;
+      }
+
+      .wc-proceed-to-checkout {
+        a {
+          background-color: @yellow;
+          color: @white;
+
+          &:hover {
+            background-color: @light-yellow;
+            color: @white;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Finalizar compra
+.woocommerce {
+  .woocommerce-notices-wrapper {}
+
+  .woocommerce-form-coupon-toggle {
+    .woocommerce-info {
+      border-top-color: @green;
+
+      &:before {
+        color: @green  !important;
+      }
+
+      a {
+        color: @green  !important;
+      }
+    }
+  }
+
+  .checkout_coupon {
+    p {
+      button {
+        background-color: @yellow;
+        color: @white;
+        height: 43.5px;
+
+        &:hover {
+          background-color: @light-yellow;
+          color: @white;
+        }
+      }
+    }
+  }
+
+  .woocommerce-checkout {
+    .woocommerce-NoticeGroup {
+      .woocommerce-error {
+        padding: 1em 2em 1em 3.5em;
+      }
+    }
+
+    #customer_details {
+
+      .woocommerce-billing-fields,
+      .woocommerce-additional-fields {
+        h3 {
+          color: @yellow;
+          font-size: 35px;
+          line-height: inherit;
+          margin: 10px 0 30px 0;
+          font-family: 'SilliiWillinn';
+          text-shadow: 2px 0px 0px @soft-white;
+        }
+      }
+    }
+
+    #order_review_heading {
+      color: @yellow;
+      font-size: 35px;
+      line-height: inherit;
+      margin: 30px 0;
+      font-family: 'SilliiWillinn';
+      text-shadow: 2px 0px 0px @soft-white;
+    }
+
+    #order_review {
+      #payment {
+        background-color: @white;
+
+        ul {
+          .woocommerce-notice {
+            border-top-color: @green  !important;
+
+            &:before {
+              color: @green  !important;
+            }
+          }
+        }
+
+        .place-order {
+          .woocommerce-terms-and-conditions-wrapper {
+            .woocommerce-privacy-policy-text {
+              p {
+                a {
+                  color: @green;
+
+                  &:hover {
+                    color: @light-black;
+                  }
+                }
+              }
+            }
+          }
+
+          button {
+            background-color: @yellow;
+            color: @white;
+            height: 43.5px;
+
+            &:hover {
+              background-color: @light-yellow;
+              color: @white;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+//Cuenta
+.woocommerce {
+  .woocommerce-MyAccount-navigation {
+    background-color: transparent;
+    box-shadow: none;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding-left: 10px;
+        position: relative;
+
+        &:before {
+          content: url(../Aitawa-theme/assets/img/dot.svg);
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+
+        a {
+          color: @light-black;
+        }
+      }
+    }
+  }
+}
