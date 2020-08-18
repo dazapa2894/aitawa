@@ -1,5 +1,20 @@
 //main: ../style.less
 //Productos
+.product {
+  .onsale {
+    top: 25px !important;
+    left: 25px !important;
+    height: 100px;
+    width: 100px;
+    font-size: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: @green  !important;
+  }
+}
+
 #product-slider-wrapper {
   position: relative;
 
@@ -241,12 +256,28 @@
     flex-direction: column-reverse;
 
     .woocommerce-variation {
+      .woocommerce-variation-description {
+        p {
+          margin: 30px 0;
+        }
+      }
+
       .woocommerce-variation-price {
         .price {
           display: block;
           margin: 25px 0 0 0;
           font-size: 30px;
           color: @yellow;
+
+          del {
+            span {}
+          }
+
+          ins {
+            text-decoration: none;
+
+            span {}
+          }
         }
       }
     }
@@ -371,19 +402,47 @@
 //Mensajes de woocommerce
 .woocommerce-message {
   margin: 0 !important;
-  border-top-color: @green !important;
+  border-top-color: @green  !important;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: 20px !important;
+
+    &:hover {
+      background-color: @yellow  !important;
+      color: @white  !important;
+    }
+  }
 
   &:before {
-    color: @green !important;
+    color: @green  !important;
+    top: 23px !important;
   }
 }
 
 //Carrito
 .woocommerce {
+  padding: 0 0 100px 0;
+
   .woocommerce-cart-form {
     .shop_table {
       tbody {
         tr {
+          .product-name {
+            a {
+              color: @green;
+
+              b {
+                font-weight: normal;
+              }
+
+              &:hover {
+                color: @light-black;
+              }
+            }
+          }
+
           .actions {
             .coupon {
               display: flex;
@@ -395,9 +454,11 @@
               button {
                 background-color: @yellow;
                 color: @white;
+                height: 43.5px;
 
                 &:hover {
                   background-color: @light-yellow;
+                  color: @white;
                 }
               }
             }
@@ -405,12 +466,182 @@
             button {
               background-color: @yellow;
               color: @white;
+              height: 43.5px;
 
               &:hover {
                 background-color: @light-yellow;
+                color: @white;
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .cart-collaterals {
+    .cart_totals {
+      margin-top: 20px;
+
+      h2 {
+        color: @yellow;
+        font-size: 50px;
+        line-height: inherit;
+        margin: 0 0 20px 10px;
+        font-family: 'SilliiWillinn';
+        text-shadow: 2px 0 0 @light-gray;
+      }
+
+      .wc-proceed-to-checkout {
+        a {
+          background-color: @yellow;
+          color: @white;
+
+          &:hover {
+            background-color: @light-yellow;
+            color: @white;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Finalizar compra
+.woocommerce {
+  .woocommerce-notices-wrapper {}
+
+  .woocommerce-form-coupon-toggle {
+    .woocommerce-info {
+      border-top-color: @green;
+
+      &:before {
+        color: @green  !important;
+      }
+
+      a {
+        color: @green  !important;
+      }
+    }
+  }
+
+  .checkout_coupon {
+    p {
+      button {
+        background-color: @yellow;
+        color: @white;
+        height: 43.5px;
+
+        &:hover {
+          background-color: @light-yellow;
+          color: @white;
+        }
+      }
+    }
+  }
+
+  .woocommerce-checkout {
+    .woocommerce-NoticeGroup {
+      .woocommerce-error {
+        padding: 1em 2em 1em 3.5em;
+      }
+    }
+
+    #customer_details {
+
+      .woocommerce-billing-fields,
+      .woocommerce-additional-fields {
+        h3 {
+          color: @yellow;
+          font-size: 35px;
+          line-height: inherit;
+          margin: 10px 0 30px 0;
+          font-family: 'SilliiWillinn';
+          text-shadow: 2px 0px 0px @soft-white;
+        }
+      }
+    }
+
+    #order_review_heading {
+      color: @yellow;
+      font-size: 35px;
+      line-height: inherit;
+      margin: 30px 0;
+      font-family: 'SilliiWillinn';
+      text-shadow: 2px 0px 0px @soft-white;
+    }
+
+    #order_review {
+      #payment {
+        background-color: @white;
+
+        ul {
+          .woocommerce-notice {
+            border-top-color: @green  !important;
+
+            &:before {
+              color: @green  !important;
+            }
+          }
+        }
+
+        .place-order {
+          .woocommerce-terms-and-conditions-wrapper {
+            .woocommerce-privacy-policy-text {
+              p {
+                a {
+                  color: @green;
+
+                  &:hover {
+                    color: @light-black;
+                  }
+                }
+              }
+            }
+          }
+
+          button {
+            background-color: @yellow;
+            color: @white;
+            height: 43.5px;
+
+            &:hover {
+              background-color: @light-yellow;
+              color: @white;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+//Cuenta
+.woocommerce {
+  .woocommerce-MyAccount-navigation {
+    background-color: transparent;
+    box-shadow: none;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding-left: 10px;
+        position: relative;
+
+        &:before {
+          content: url(../Aitawa-theme/assets/img/dot.svg);
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+
+        a {
+          color: @light-black;
         }
       }
     }

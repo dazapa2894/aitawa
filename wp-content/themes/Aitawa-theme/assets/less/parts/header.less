@@ -59,7 +59,12 @@
 }
 
 #nav-bar2 {
-    // border: 1px solid;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 25%;
+    grid-template-areas:
+        "boton"
+        "redes";
     padding: 15px;
     position: absolute;
     margin-top: 88px;
@@ -101,5 +106,33 @@
                 padding-top: 5px;
             }
         }
+    }
+}
+
+.candado {
+    background-color: @green;
+    color: @white;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 10px auto 80px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: @light-black;
+    }
+
+    img {
+        margin: 0 10px 0 0;
+        height: 40px;
+    }
+
+    p {
+        margin-top: 10px;
     }
 }
