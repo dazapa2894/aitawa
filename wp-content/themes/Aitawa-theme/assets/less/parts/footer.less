@@ -12,9 +12,11 @@
     align-content: center;
     width: fit-content;
     border-radius: 5px;
+    border: 2px solid @green;
 
     &:hover {
-        background-color: @light-black;
+        background-color: @white;
+        color: @green;
     }
 
     img {
@@ -62,6 +64,7 @@ footer {
     .footer-logo {
         margin: 20px auto;
         width: 300px;
+        display: block;
 
         img {
             width: 100%;
@@ -81,6 +84,10 @@ footer {
                     display: block;
                     margin: 30px 0;
 
+                    b {
+                        font-weight: normal;
+                    }
+
                     &:after {
                         content: "";
                         height: 2px;
@@ -88,6 +95,10 @@ footer {
                         margin-top: 8px;
                         background-color: @green;
                         display: block;
+                    }
+
+                    &:hover {
+                        color: @green;
                     }
                 }
             }

@@ -1,0 +1,11 @@
+2020-08-13T15:59:34+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::get_field() in E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\functions.php:156
+Stack trace:
+#0 E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-hook.php(287): show_product_images_slider('')
+#1 E:\xampp\htdocs\team\aitawa\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 E:\xampp\htdocs\team\aitawa\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\content-single-product.php(45): do_action('woocommerce_bef...')
+#4 E:\xampp\htdocs\team\aitawa\wp-includes\template.php(725): require('E:\\xampp\\htdocs...')
+#5 E:\xampp\htdocs\team\aitawa\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('E:\\xampp\\htdocs...', false)
+#6 E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\woocommerce\single-product.php(38): wc_get_template_part('content', 'single-product')
+#7 E:\xampp\htdocs\team\aitawa\wp-includes\tem en E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\functions.php en la línea 156
+

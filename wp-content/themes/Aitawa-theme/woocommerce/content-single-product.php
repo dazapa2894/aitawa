@@ -47,27 +47,33 @@ if (post_password_required()) {
 
 	?>
 
-	<section id="product-info-section" class="container-wide">
-		<div class="titulo">
-			<img src="<?= wp_get_attachment_url("103") ?>" alt="iconito">
-			<h2> <?= get_field('subtitulo') ?> </h2>
-		</div>
+	<section id="product-info-section" class="container-new">
 
 		<div class="row">
-			<div class="col s7 ">
+			<div class="col xs12 s12 m12 l12 xl12">
+				<div class="big-title">
+					<h2> <?= get_field('subtitulo') ?> </h2>
+				</div>
+			</div><!-- end col -->
+		</div><!-- end row -->
+
+		<div class="row">
+			<div class="col xs12 s12 m12 l6 xl6">
 
 				<div class="text-content">
 					<p>
-						<?= get_field('texto') ?>
+						<?= $product->get_description(); ?>
+
 					</p>
 				</div>
 
-				<div class="frase">
-					<h3> <?= get_field('frase') ?> </h3>
-				</div>
-				<pre>
-				<?php //var_dump($product->get_attributes()); ?>
-				</pre>
+				<h3 class="frase"> <?= get_field('frase_del_producto') ?> </h3>
+
+				<!--<pre>
+				<?php //var_dump($product->get_attributes()); 
+				?>
+				</pre>-->
+
 				<?php
 
 				switch ($product->get_type()) {
@@ -80,24 +86,17 @@ if (post_password_required()) {
 							$tamano = $product->get_attribute('tamano');
 							?>
 							<div class="variacion">
-								<div class="item col s4">
-									<div id="opcion">
-										Opción <?= $key + 1 ?>:
-									</div>
+								<div id="opcion" class="item">
+									<p>Opción <?= $key + 1 ?>:</p>
 								</div>
-								<div class="item col s4">
-									<div id="tamaño">
-										<?= $tamano ?>
-									</div>
+								<div id="tamano" class="item">
+									<?= $tamano ?>
 								</div>
-								<div class="item col s4">
-									<div id="precio">
-										<?php
-										$money_number = '$ ' . number_format($precio, 0, ',', '.');
-										echo $money_number;
-										?>
-									</div>
-
+								<div id="precio" class="item">
+									<?php
+									$money_number = '$ ' . number_format($precio, 0, ',', '.');
+									echo $money_number;
+									?>
 								</div>
 							</div>
 						</div>
@@ -116,26 +115,19 @@ if (post_password_required()) {
 							?>
 
 								<div class="variacion">
-									<div class="item col s4">
-										<div id="opcion">
-											Opción <?= $key + 1 ?>:
-										</div>
+									<div id="opcion" class="item">
+										<p>Opción <?= $key + 1 ?>:</p>
 									</div>
-									<div class="item col s4">
-										<div id="tamaño">
-											<?= $tamano ?>
-										</div>
+									<div id="tamano" class="item">
+										<?= $tamano ?>
 									</div>
-									<div class="item col s4">
-										<div id="precio">
-											<?php
-											$money_number = '$ ' . number_format($precio, 0, ',', '.');
-											echo $money_number;
-											?>
-										</div>
-
+									<div id="precio" class="item">
+										<?php
+										$money_number = '$ ' . number_format($precio, 0, ',', '.');
+										echo $money_number;
+										?>
 									</div>
-								</div>
+								</div><!-- end variacion -->
 
 							<?php	}	?>
 						</div>
@@ -152,36 +144,24 @@ if (post_password_required()) {
 				<!-- Muestro el boton de comprar y sus componentes -->
 				<?php do_action('woocommerce_' . $product->get_type() . '_add_to_cart'); ?>
 
-			</div>
+			</div><!-- end col -->
 
-			<div id="img-wrapper" class="col s5">
-				<img src="<?= get_field('imagen_lateral') ?>" />
-			</div>
-
-		</div>
+			<div class="col xs12 s12 m12 l6 xl6">
+				<div id="img-wrapper">
+					<img src="<?= get_field('imagen_del_producto_envasado') ?>" />
+				</div>
+			</div><!-- end col -->
+		</div><!-- end row -->
 
 	</section>
 
-
-
-
-	<div class="summary entry-summary">
+	<section id="comentarios">
+		<!--VVV INICIO CONTENIDO CREADO POR WP VVV-->
 		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		//do_action('woocommerce_single_product_summary');
+		wc_get_template('single-product/tabs/custom-reviews.php'); 
 		?>
-	</div>
+		<!--^^^ FIN CONTENIDO CREADO POR WP ^^^-->
+	</section>
 
 	<?php
 	/**
@@ -191,7 +171,8 @@ if (post_password_required()) {
 	 * @hooked woocommerce_upsell_display - 15
 	 * @hooked woocommerce_output_related_products - 20
 	 */
-	//do_action( 'woocommerce_after_single_product_summary' );
+	remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs' );
+	do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
 

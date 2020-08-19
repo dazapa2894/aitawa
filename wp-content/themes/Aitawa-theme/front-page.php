@@ -56,7 +56,6 @@
     <div class="row">
       <div class="col xs12 s12 m12 l10 xl10 offset-l2 offset-xl2">
         <div class="big-title">
-          <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
           <h2>Nuestros productos</h2>
         </div><!-- end big title -->
       </div>
@@ -96,7 +95,6 @@
     <div class="row">
       <div class="col xs12 s12 m12 l10 xl10 offset-l2 offset-xl2">
         <div class="big-title">
-          <img src="<?php echo $url_theme ?>assets/img/dot.svg" alt="Dot" />
           <h2>Novedades para descubrir</h2>
         </div><!-- end big title -->
       </div>

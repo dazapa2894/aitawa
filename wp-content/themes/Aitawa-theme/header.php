@@ -65,19 +65,17 @@ $url_theme = esc_url(home_url('/')) . 'wp-content/themes/Aitawa-theme/'; ?>
           </a>
         </div>
 
-        <div class="nav-logo logo-area">
+        <a href="http://www.localhost/team/aitawa" class="nav-logo logo-area">
           <img src="<?php echo $url_theme ?>/assets/img/aitawa-logo.svg" alt="Aitawa logo" />
-        </div>
+        </a>
 
         <div class="nav-menu links-area">
-          <a href="">
-            <?php wp_nav_menu(array(
-              'menu_class' => 'page_item',
-              'menu_id' => 'menu',
-              'container' => 'ul',
-              'theme_location' => 'header-menu',
-            )); ?>
-          </a>
+          <?php wp_nav_menu(array(
+            'menu_class' => 'page_item',
+            'menu_id' => 'menu',
+            'container' => 'ul',
+            'theme_location' => 'header-menu',
+          )); ?>
         </div>
 
         <div class="container-btn boton-area">
