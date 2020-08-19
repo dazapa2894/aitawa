@@ -327,7 +327,7 @@ jQuery(document).ready(function ($) {
         navbar_2.css("opacity", "0");
         navbar_2.css("display", "none");
         navbar.css("width", "270px");
-        navbar.css("height", "500px");
+        navbar.css("height", "600px");
         setTimeout(() => {
           navbar_1.css("opacity", "1");
           navbar_1.css("display", "grid");

@@ -20,9 +20,9 @@
       </a>
     </div>
 
-    <div class="footer-logo">
+    <a href="http://localhost/team/aitawa" class="footer-logo">
       <img src="http://localhost/team/aitawa/wp-content/uploads/2020/08/aitawa-logo.svg" alt="Aitawa logo" />
-    </div>
+    </a>
 
     <div class="row">
       <div class="col xs12 s6 m6 l6 xl6 hcenter">
