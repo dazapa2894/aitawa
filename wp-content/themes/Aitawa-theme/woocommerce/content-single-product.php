@@ -156,24 +156,31 @@ if (post_password_required()) {
 	</section>
 
 	<section id="comentarios">
-		<!--VVV INICIO CONTENIDO CREADO POR WP VVV-->
-		<?php
-		wc_get_template('single-product/tabs/custom-reviews.php'); 
-		?>
-		<!--^^^ FIN CONTENIDO CREADO POR WP ^^^-->
+		<div class="container-new">
+
+			<!--VVV INICIO CONTENIDO CREADO POR WP VVV-->
+			<?php
+			wc_get_template('single-product/tabs/custom-reviews.php');
+			?>
+			<!--^^^ FIN CONTENIDO CREADO POR WP ^^^-->
+		</div><!-- end container -->
 	</section>
 
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs' );
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
+	<div class="container-new">
+
+		<?php
+		/**
+		 * Hook: woocommerce_after_single_product_summary.
+		 *
+		 * @hooked woocommerce_output_product_data_tabs - 10
+		 * @hooked woocommerce_upsell_display - 15
+		 * @hooked woocommerce_output_related_products - 20
+		 */
+		remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs');
+
+		do_action('woocommerce_after_single_product_summary');
+		?>
+	</div>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
