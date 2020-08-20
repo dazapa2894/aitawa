@@ -1,16 +1,17 @@
 jQuery(document).ready(function ($) {
   //Aquí ocurre la magia del resposive de los blogs
   var elem = document.querySelector(".blogs-area");
-  console.log(elem);
-  var iso = new Isotope(elem, {
-    // options
-    originLeft: false,
-    itemSelector: ".blogs-wrapper",
-    layoutMode: "masonry",
-    masonry: {
-      gutter: 15,
-    },
-  });
+  if (elem) {
+    var iso = new Isotope(elem, {
+      // options
+      originLeft: false,
+      itemSelector: ".blogs-wrapper",
+      layoutMode: "masonry",
+      masonry: {
+        gutter: 15,
+      },
+    });
+  }
 
   //Se inicializa el menú lateral
   $(".sidenav").sidenav();
@@ -288,14 +289,21 @@ jQuery(document).ready(function ($) {
   }
 
   let menuBig = true;
-  //let menuToSmall = false;
   let header = $("#top-bar");
-  let padd_top = parseInt($("#top-bar").css("padding-top"));
-  let padd_bot = parseInt($("#top-bar").css("padding-bottom"));
-  let header_height = parseInt(header.height()) + padd_top + padd_bot;
+  let padd_top;
+  let padd_bot;
+  let header_height;
   let navbar = $("#nav-bar");
   let navbar_1 = $("#nav-bar .content_max");
   let navbar_2 = $("#nav-bar .content_min");
+
+  if (header.height()) {
+    padd_top = parseInt($("#top-bar").css("padding-top"));
+    padd_bot = parseInt($("#top-bar").css("padding-bottom"));
+    header_height = parseInt(header.height()) + padd_top + padd_bot;
+  } else {
+    header_height = 0;
+  }
 
   $(window).scroll(async function () {
     if ($(this).scrollTop() >= header_height) {
