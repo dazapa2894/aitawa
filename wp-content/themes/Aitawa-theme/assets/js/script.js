@@ -6,11 +6,11 @@ jQuery(document).ready(function ($) {
       // options
       originLeft: false,
       itemSelector: ".blogs-wrapper",
-      layoutMode: "masonry",      
+      layoutMode: "masonry",
       masonry: {
         gutter: 10,
         horizontalOrder: true,
-        fitWidth: true
+        fitWidth: true,
       },
     });
   }
@@ -286,23 +286,19 @@ jQuery(document).ready(function ($) {
     },
   };
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
   let menuBig = true;
   let header = $("#top-bar");
-  let padd_top;
-  let padd_bot;
   let header_height;
   let navbar = $("#nav-bar");
-  let navbar_1 = $("#nav-bar .content_max");
-  let navbar_2 = $("#nav-bar .content_min");
+  let navbar_max = $("#nav-bar.max-menu");
+  let navbar_min = $("#nav-bar.min-menu");
 
   if (header.height()) {
-    padd_top = parseInt($("#top-bar").css("padding-top"));
-    padd_bot = parseInt($("#top-bar").css("padding-bottom"));
-    header_height = parseInt(header.height()) + padd_top + padd_bot;
+    let padd_height =
+      parseInt($("#top-bar").css("padding-top")) +
+      parseInt($("#top-bar").css("padding-bottom"));
+    header_height = parseInt(header.height()) + padd_height;
+    navbar.css("margin-top", header_height);
   } else {
     header_height = 0;
   }
@@ -315,14 +311,19 @@ jQuery(document).ready(function ($) {
       if ($(window).scrollTop() > 300) {
         if (menuBig) {
           // Animación volver chiquito el menu
-          navbar_1.css("opacity", "0");
-          navbar_1.css("display", "none");
-          navbar.css("width", "150px");
-          navbar.css("height", "200px");
-          setTimeout(() => {
-            navbar_2.css("opacity", "1");
-            navbar_2.css("display", "grid");
-          }, 500);
+          // if (navbar_min) {
+          //   console.log('holi');
+          //   navbar_min.css("animation-play-state", "initial");
+          //   // navbar_max.css("animation-play-state", "running");
+          // }
+          navbar.toggleClass("min-menu");
+          navbar.toggleClass("max-menu");
+
+          // if (navbar_min) {
+          //   console.log('holi2');
+          //   navbar_min.css("animation-play-state", "initial");
+          //   // navbar_max.css("animation-play-state", "running");
+          // }
           menuBig = false;
         }
       }
@@ -334,14 +335,8 @@ jQuery(document).ready(function ($) {
     if ($(window).scrollTop() == 0) {
       if (!menuBig) {
         // Animación de volver grande el menú
-        navbar_2.css("opacity", "0");
-        navbar_2.css("display", "none");
-        navbar.css("width", "270px");
-        navbar.css("height", "600px");
-        setTimeout(() => {
-          navbar_1.css("opacity", "1");
-          navbar_1.css("display", "grid");
-        }, 500);
+        navbar.toggleClass("min-menu");
+        navbar.toggleClass("max-menu");
         menuBig = true;
       }
     }
@@ -350,14 +345,8 @@ jQuery(document).ready(function ($) {
   $("#menu").click(function () {
     if (!menuBig) {
       // Animación de volver grande el menú
-      navbar_2.css("opacity", "0");
-      navbar_2.css("display", "none");
-      navbar.css("width", "270px");
-      navbar.css("height", "500px");
-      setTimeout(() => {
-        navbar_1.css("opacity", "1");
-        navbar_1.css("display", "grid");
-      }, 500);
+      navbar.toggleClass("min-menu");
+      navbar.toggleClass("max-menu");
       menuBig = true;
     }
   });
