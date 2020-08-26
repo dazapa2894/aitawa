@@ -30,46 +30,34 @@ get_header('shop');
 //do_action( 'woocommerce_before_main_content' );
 
 ?>
-<div class="header-imagen"></div>
-
-<header class="woocommerce-products-header">
-	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-		<!--<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>-->
-	<?php endif; ?>
-
-	<?php
-	/**
-	 * Hook: woocommerce_archive_description.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action('woocommerce_archive_description');
-	?>
-</header>
 
 <section id="que-es-aitawa-imagen" style="background-image: url('<?php
 																	if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
 																		the_post_thumbnail_url();
 																	}
 																	?>');">
-
-
 	<div class="page-slide-info">
 		<div class="green-cuadro">
 			<img src="" alt="">
 		</div>
 		<h1>
-			<?php the_title(); ?>
+			<!-- Titulo fuera del loop -->
+			<?= post_type_archive_title('', false); ?>
 		</h1>
 		<p>
-			El cloruro de Magnesio aporta muchos beneficios en salud y belleza. Descubre con Aitawa como aprovechar este milagro de la naturaleza en tu vida.
+			<?php
+			//Contenido fuera del loop
+			$post_id = 85;
+			$post_object = get_post($post_id);
+			echo $post_object->post_content;
+
+			?>
 		</p>
 	</div>
 </section>
 
 <section class="shop-catalogo">
-	<div class="container-fluid">
+	<div class="container-new">
 
 		<?php
 		if (woocommerce_product_loop()) {
@@ -86,17 +74,15 @@ get_header('shop');
 			$content = $post['post_content'];
 		?>
 
-			<?php //echo $content ?>
-
-
 			<div class="row">
+
+				<div class="col xs12 s12 m12 l12 xl12 hide-991-up">
+					<?php get_sidebar('sidebar-mobile'); ?>
+				</div><!-- end col -->
+
 				<div class="col xs12 s12 m12 l12 xl12">
 					<?php do_action('woocommerce_before_shop_loop'); ?>
 				</div><!-- end col -->
-			</div><!-- end row -->
-
-
-			<div class="row">
 
 				<div class="col xs12 s12 m12 l9 xl10 no-padding">
 					<?php
@@ -119,9 +105,10 @@ get_header('shop');
 					?>
 				</div><!-- en col -->
 
-				<div class="col xs12 s12 m12 l3 xl2 hide-991-down">
-					<?php do_action('woocommerce_sidebar'); ?>
-				</div><!-- end col -->
+				<!--<div class="col xs12 s12 m12 l3 xl2 hide-991-down">
+					<?php //do_action('woocommerce_sidebar'); ?>
+				</div><!- end col -->
+
 			</div><!-- en row -->
 	</div><!-- end container -->
 </section>

@@ -135,7 +135,8 @@
                 height: 50px;
                 font-family: AvenirNext, sans-serif;
                 font-weight: 600;
-                b{
+
+                b {
                     font-weight: 600;
                 }
             }
@@ -150,18 +151,34 @@
 }
 
 #home-blogs {
-    padding: 50px 5% 50px 0;
+    padding: 50px 20px 0 20px;
+
+    @media(min-width: 600px) {
+        padding: 50px 20px 0 5%;
+    }
 
     .blogs-area {
-        width: 80%;
-        margin: 0 0 0 20%;
+        width: 100%!important;
+        margin: 0;
+        //padding: 0 20px 0 5%;
+
+        /*@media(min-width: 768px) {
+            width: 80%;
+            margin: 0 0 0 20%;
+        }*/
 
         .blogs-wrapper {
-            width: 310px;
-            min-width: 310px;
-            max-width: 350px;
+            width: 100%;            
             -webkit-transition: all .1s linear;
             transition: all .1s linear;
+
+           @media(min-width: 600px) {
+               width: 250px;
+            }
+
+            @media(min-width: 768px) {
+                 width: 310px;
+            }
 
             &:hover {
                 transform: translateY(-5px);

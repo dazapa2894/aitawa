@@ -1,0 +1,2 @@
+2020-08-20T14:59:19+00:00 CRITICAL Cannot redeclare add_widget_Support() (previously declared in E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\functions.php:32) en E:\xampp\htdocs\team\aitawa\wp-content\themes\Aitawa-theme\functions.php en la línea 43
+

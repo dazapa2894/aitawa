@@ -19,7 +19,7 @@
       </p>
     </div>
   </section>
-  
+
   <section id="home-blogs">
 
     <div class="blogs-area">
@@ -67,29 +67,6 @@
         <?php endwhile; ?>
         <!-- End of the main loop -->
 
-        <!-- pagination -->
-        <div id="wp_pagination">
-          <?php
-          // Primer post
-          //echo '<a class="first page button" href="'.get_pagenum_link(1).'">&laquo;</a>';
-
-          //post anterior
-          echo '<a class="previous" href="' . get_pagenum_link(($curpage - 1 > 0 ? $curpage - 1 : 1)) . '">&lsaquo;PREV </a>';
-
-          //lista de post
-          for ($i = 1; $i <= $posts->max_num_pages; $i++) {
-            echo '<a class="' . ($i == $curpage ? 'active ' : '') . 'page button" href="' . get_pagenum_link($i) . '">' . $i . '</a>';
-          }
-
-          //post siguiente
-          echo '<a class="next" href="' . get_pagenum_link(($curpage + 1 <= $posts->max_num_pages ? $curpage + 1 : $posts->max_num_pages)) . '"> SIG&rsaquo;</a>';
-
-          // Ultimo post
-          //echo '<a class="last page button" href="'.get_pagenum_link($posts->max_num_pages).'">&raquo;</a>';
-          ?>
-        </div>
-
-
       <?php else : ?>
         <!-- Lo que se muestra si no hay posts -->
 
@@ -102,6 +79,32 @@
 
     </div>
   </section>
+
+
+  <div class="container-new">
+    <!-- pagination -->
+    <div id="wp_pagination">
+      <?php
+      // Primer post
+      //echo '<a class="first page button" href="'.get_pagenum_link(1).'">&laquo;</a>';
+
+      //post anterior
+      echo '<a class="previous" href="' . get_pagenum_link(($curpage - 1 > 0 ? $curpage - 1 : 1)) . '">&lsaquo; ANT </a>';
+
+      //lista de post
+      for ($i = 1; $i <= $posts->max_num_pages; $i++) {
+        echo '<a class="' . ($i == $curpage ? 'active ' : '') . 'page button" href="' . get_pagenum_link($i) . '">' . $i . '</a>';
+      }
+
+      //post siguiente
+      echo '<a class="next" href="' . get_pagenum_link(($curpage + 1 <= $posts->max_num_pages ? $curpage + 1 : $posts->max_num_pages)) . '"> SIG &rsaquo;</a>';
+
+      // Ultimo post
+      //echo '<a class="last page button" href="'.get_pagenum_link($posts->max_num_pages).'">&raquo;</a>';
+      ?>
+    </div>
+  </div><!-- end container -->
+
 
 </main>
 

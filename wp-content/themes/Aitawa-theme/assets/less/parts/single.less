@@ -9,9 +9,12 @@
 
   h1 {
     display: flex;
-    align-items: center;
-    font-size: 40px;
+    font-size: 25px;
     margin: 30px 0;
+
+    @media(min-width: 768px) {
+      font-size: 40px;
+    }
 
     &:before {
       content: url('../Aitawa-theme/assets/img/dot.svg');
@@ -22,12 +25,16 @@
   }
 
   h2 {
-     color: @yellow;
-     font-size: 50px;
-     line-height: inherit;
-     margin: 10px 0 30px 0;
-     font-family: 'SilliiWillinn';
-     text-shadow: 2px 0px 0px #EDEDED;
+    color: @yellow;
+    font-size: 40px;
+    line-height: inherit;
+    margin: 30px 0;
+    font-family: 'SilliiWillinn';
+    text-shadow: 2px 0px 0px #EDEDED;
+
+    @media(min-width: 768px) {
+      font-size: 50px;
+    }
   }
 
   h3 {
@@ -127,6 +134,10 @@
 
   figure {
     margin: 0;
+
+    img {
+      height: 100%;
+    }
   }
 
   blockquote {
@@ -135,8 +146,13 @@
     p {
       font-family: 'SilliiWillinn';
       color: @yellow;
-      font-size: 50px;
-      line-height: normal;
+      font-size: 40px;
+      line-height: 55px;
+
+      @media(min-width: 768px) {
+        font-size: 50px;
+        line-height: normal;
+      }
     }
   }
 
@@ -160,23 +176,27 @@
       color: @light-black;
       text-transform: capitalize;
     }
-    .wp-block-file__button{
-      color:@white;
+
+    .wp-block-file__button {
+      color: @white;
     }
   }
 }
 
-.paginacion{
+.paginacion {
   margin-top: 50px;
+
   .prev-post,
-  .next-post{
+  .next-post {
+
     .prev,
     .next {
-      a{
+      a {
         font-size: 15px;
         color: @green;
-        &:hover{
-          color:@yellow;
+
+        &:hover {
+          color: @yellow;
         }
       }
     }

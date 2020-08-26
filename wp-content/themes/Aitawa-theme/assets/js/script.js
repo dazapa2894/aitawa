@@ -6,9 +6,11 @@ jQuery(document).ready(function ($) {
       // options
       originLeft: false,
       itemSelector: ".blogs-wrapper",
-      layoutMode: "masonry",
+      layoutMode: "masonry",      
       masonry: {
-        gutter: 15,
+        gutter: 10,
+        horizontalOrder: true,
+        fitWidth: true
       },
     });
   }
