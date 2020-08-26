@@ -101,8 +101,12 @@ h6 {
 #que-es-aitawa-imagen {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
   position: relative;
+  height: 400px;
+
+  @media(min-width: 768px) {
+    height: 800px;
+  }
 
   .page-slide-info {
     position: absolute;
@@ -110,19 +114,21 @@ h6 {
     right: 0;
     background-color: rgba(0, 0, 0, 0.7);
     max-width: 300px;
-    height: 380px;
-    padding: 50px 30px 10px 30px;
+    height: auto;
+    padding: 10px 20px 20px 20px;
     width: fit-content;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       max-width: 400px;
       right: 10%;
+      height: 380px;
+      padding: 50px 30px 10px 30px;
     }
 
     h1 {
       color: @yellow;
       margin: 0 0 20px 0;
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 300;
 
       @media (min-width: 600px) {
@@ -151,9 +157,12 @@ h6 {
 
   h2 {
     display: flex;
-    align-items: center;
-    font-size: 40px;
+    font-size: 25px;
     margin: 30px 0;
+
+    @media(min-width: 768px) {
+      font-size: 40px;
+    }
 
     &:before {
       content: url(../Aitawa-theme/assets/img/dot.svg);
@@ -165,11 +174,15 @@ h6 {
 
   h3 {
     color: @yellow;
-    font-size: 50px;
+    font-size: 40px;
     line-height: inherit;
-    margin: 10px 0 30px 0;
+    margin: 30px 0;
     font-family: 'SilliiWillinn';
     text-shadow: 2px 0px 0px #EDEDED;
+
+    @media(min-width: 768px) {
+      font-size: 50px;
+    }
   }
 
   h4 {
@@ -212,6 +225,7 @@ h6 {
       margin-right: 10px;
     }
   }
+
   p {
     margin-bottom: 15px;
   }
@@ -268,6 +282,10 @@ h6 {
 
   figure {
     margin: 0;
+
+    img {
+      height: 100%;
+    }
   }
 
   blockquote {
@@ -276,8 +294,13 @@ h6 {
     p {
       font-family: 'SilliiWillinn';
       color: @yellow;
-      font-size: 50px;
-      line-height: normal;
+      font-size: 40px;
+      line-height: 55px;
+
+      @media(min-width: 768px) {
+        font-size: 50px;
+        line-height: normal;
+      }
     }
   }
 
@@ -306,7 +329,52 @@ h6 {
       color: @white;
     }
   }
-  .wp-block-columns{
+
+  .wp-block-columns {
     margin: 50px 0;
+  }
+}
+
+//Paginacion
+#wp_pagination {
+  margin: 50px 0 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .previous,
+  .next,
+  .page {
+    color: @yellow;
+
+    &:hover {
+      color: @green;
+    }
+  }
+
+  .previous {
+    margin-right: 20px;
+  }
+
+  .next {
+    margin-left: 20px;
+  }
+
+  .active {
+    color: @white;
+    background-color: @yellow;
+
+    &:hover {
+      color: @white;
+    }
+  }
+
+  .page {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
   }
 }

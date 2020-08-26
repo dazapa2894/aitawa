@@ -25,7 +25,11 @@
     }
 
     p {
-        margin-top: 10px;
+        margin-top: 0px;
+
+        @media(min-width: 440px) {
+            margin-top: 10px;
+        }
     }
 }
 
@@ -75,6 +79,8 @@ footer {
     .menu-menu-footer-derecho-container,
     .menu-menu-footer-izquierdo-container {
         ul {
+            min-width: 240px;
+
             li {
                 a {
                     text-transform: uppercase;
@@ -95,6 +101,10 @@ footer {
                         margin-top: 8px;
                         background-color: @green;
                         display: block;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
                     }
 
                     &:hover {

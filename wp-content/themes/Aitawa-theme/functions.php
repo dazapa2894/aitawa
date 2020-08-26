@@ -32,7 +32,16 @@ function add_widget_Support()
   register_sidebar(array(
     'name' => 'Sidebar',
     'id' => 'sidebar',
-    'before_widget' => '<div>',
+    'before_widget' => '<div class="sidebar-pc">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+  ));
+
+  register_sidebar(array(
+    'name' => 'Sidebar mobile',
+    'id' => 'sidebar-mobile',
+    'before_widget' => '<div class="sidebar-mobile"',
     'after_widget' => '</div>',
     'before_title' => '<h2>',
     'after_title' => '</h2>',
