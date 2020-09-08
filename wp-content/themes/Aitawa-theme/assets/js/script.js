@@ -309,22 +309,11 @@ jQuery(document).ready(function ($) {
       navbar.css("position", "fixed");
 
       if ($(window).scrollTop() > 300) {
-        if (menuBig) {
-          // Animación volver chiquito el menu
-          // if (navbar_min) {
-          //   console.log('holi');
-          //   navbar_min.css("animation-play-state", "initial");
-          //   // navbar_max.css("animation-play-state", "running");
-          // }
-          navbar.toggleClass("min-menu");
-          navbar.toggleClass("max-menu");
-
-          // if (navbar_min) {
-          //   console.log('holi2');
-          //   navbar_min.css("animation-play-state", "initial");
-          //   // navbar_max.css("animation-play-state", "running");
-          // }
-          menuBig = false;
+        if (navbar.hasClass("max-menu")) {
+          // Animación de volver pequeño el menú
+          navbar.removeClass("max-menu");
+          navbar.outerWidth();
+          navbar.addClass("min-menu");
         }
       }
     } else {
@@ -333,21 +322,21 @@ jQuery(document).ready(function ($) {
     }
 
     if ($(window).scrollTop() == 0) {
-      if (!menuBig) {
+      if (navbar.hasClass("min-menu")) {
         // Animación de volver grande el menú
-        navbar.toggleClass("min-menu");
-        navbar.toggleClass("max-menu");
-        menuBig = true;
+        navbar.removeClass("min-menu");
+        navbar.outerWidth();
+        navbar.addClass("max-menu");
       }
     }
   });
 
-  $("#menu").click(function () {
-    if (!menuBig) {
+  $("#menu_min").click(function () {
+    if (navbar.hasClass("min-menu")) {
       // Animación de volver grande el menú
-      navbar.toggleClass("min-menu");
-      navbar.toggleClass("max-menu");
-      menuBig = true;
+      navbar.removeClass("min-menu");
+      navbar.outerWidth();
+      navbar.addClass("max-menu");
     }
   });
 }); // End document ready
