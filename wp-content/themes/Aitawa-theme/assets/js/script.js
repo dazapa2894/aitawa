@@ -317,10 +317,10 @@ jQuery(document).ready(function ($) {
           // Animación de volver pequeño el menú
           navbar.removeClass("max-menu");
           navbar.outerWidth();
+          wrapper_min.css("display", "grid");
           navbar.addClass("min-menu");
           await sleep(1000);
           wrapper_max.css("display", "none");
-          wrapper_min.css("display", "grid");
         }
       }
     } else {
@@ -333,9 +333,9 @@ jQuery(document).ready(function ($) {
         // Animación de volver grande el menú
         navbar.removeClass("min-menu");
         navbar.outerWidth();
+        wrapper_max.css("display", "grid");
         navbar.addClass("max-menu");
         await sleep(1000);
-        wrapper_max.css("display", "grid");
         wrapper_min.css("display", "none");
       }
     }
@@ -346,9 +346,9 @@ jQuery(document).ready(function ($) {
       // Animación de volver grande el menú
       navbar.removeClass("min-menu");
       navbar.outerWidth();
+      wrapper_max.css("display", "grid");
       navbar.addClass("max-menu");
       await sleep(1000);
-      wrapper_max.css("display", "grid");
       wrapper_min.css("display", "none");
     }
   });
