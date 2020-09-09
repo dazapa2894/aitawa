@@ -21,12 +21,14 @@
   animation-delay: 0.5s;
   .content_min {
     .content_wrapper {
+      pointer-events: all;
       animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-delay: 0.5s;
     }
   }
   .content_max {
     .content_wrapper {
+      pointer-events: none;
       animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-direction: reverse;
     }
@@ -38,12 +40,14 @@
   animation-delay: 0.5s;
   .content_min {
     .content_wrapper {
+      pointer-events: none;
       animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-direction: reverse;
     }
   }
   .content_max {
     .content_wrapper {
+      pointer-events: all;
       animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-delay: 0.5s;
     }

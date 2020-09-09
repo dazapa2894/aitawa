@@ -290,12 +290,9 @@ jQuery(document).ready(function ($) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  let menuBig = true;
   let header = $("#top-bar");
   let header_height;
   let navbar = $("#nav-bar");
-  let wrapper_max = $("#nav-bar .content_max .content_wrapper");
-  let wrapper_min = $("#nav-bar .content_min .content_wrapper");
 
   if (header.height()) {
     let padd_height =
@@ -317,10 +314,7 @@ jQuery(document).ready(function ($) {
           // Animación de volver pequeño el menú
           navbar.removeClass("max-menu");
           navbar.outerWidth();
-          wrapper_min.css("display", "grid");
           navbar.addClass("min-menu");
-          await sleep(1000);
-          wrapper_max.css("display", "none");
         }
       }
     } else {
@@ -333,10 +327,7 @@ jQuery(document).ready(function ($) {
         // Animación de volver grande el menú
         navbar.removeClass("min-menu");
         navbar.outerWidth();
-        wrapper_max.css("display", "grid");
         navbar.addClass("max-menu");
-        await sleep(1000);
-        wrapper_min.css("display", "none");
       }
     }
   });
@@ -346,10 +337,7 @@ jQuery(document).ready(function ($) {
       // Animación de volver grande el menú
       navbar.removeClass("min-menu");
       navbar.outerWidth();
-      wrapper_max.css("display", "grid");
       navbar.addClass("max-menu");
-      await sleep(1000);
-      wrapper_min.css("display", "none");
     }
   });
 }); // End document ready
