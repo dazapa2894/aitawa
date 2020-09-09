@@ -16,39 +16,91 @@
 }
 
 .min-menu {
-  animation: scale-menu 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+  animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
   animation-direction: reverse; // Ahora hacia adentro
-  animation-delay: 2s;
+  animation-delay: 0.5s;
   .content_min {
     .content_wrapper {
-      animation: opacity-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-      animation-delay: 2s;
+      animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation-delay: 0.5s;
     }
   }
   .content_max {
     .content_wrapper {
-      animation: opacity-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-direction: reverse;
     }
   }
 }
 
 .max-menu {
-  animation: scale-menu 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
-  animation-delay: 2s;
+  animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+  animation-delay: 0.5s;
   .content_min {
     .content_wrapper {
-      animation: opacity-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       animation-direction: reverse;
     }
   }
   .content_max {
     .content_wrapper {
-      animation: opacity-in 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-      animation-delay: 2s;
+      animation: opacity-in 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation-delay: 0.5s;
     }
   }
 }
+
+// .max-menu-start {
+//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+// }
+
+// .content-max-menu-start{
+//   .content_max {
+//     .content_wrapper {
+//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+//     }
+//   }
+// }
+
+// .max-menu-end {
+//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+//   animation-direction: reverse;
+// }
+
+// .content-max-menu-end{
+//   .content_max {
+//     .content_wrapper {
+//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+//       animation-direction: reverse;
+//     }
+//   }
+// }
+
+// .min-menu-start {
+//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+//   animation-direction: reverse; // Ahora hacia adentro
+// }
+
+// .content-min-menu-start {
+//   .content_min {
+//     .content_wrapper {
+//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+//     }
+//   }
+// }
+
+// .min-menu-end {
+//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+// }
+
+// .content-min-menu-end {
+//   .content_min {
+//     .content_wrapper {
+//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+//       animation-direction: reverse;
+//     }
+//   }
+// }
 
 @keyframes opacity-in {
   0% {

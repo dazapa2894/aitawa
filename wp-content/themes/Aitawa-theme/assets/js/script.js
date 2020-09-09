@@ -286,12 +286,16 @@ jQuery(document).ready(function ($) {
     },
   };
 
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   let menuBig = true;
   let header = $("#top-bar");
   let header_height;
   let navbar = $("#nav-bar");
-  let navbar_max = $("#nav-bar.max-menu");
-  let navbar_min = $("#nav-bar.min-menu");
+  let wrapper_max = $("#nav-bar .content_max .content_wrapper");
+  let wrapper_min = $("#nav-bar .content_min .content_wrapper");
 
   if (header.height()) {
     let padd_height =
@@ -314,6 +318,9 @@ jQuery(document).ready(function ($) {
           navbar.removeClass("max-menu");
           navbar.outerWidth();
           navbar.addClass("min-menu");
+          await sleep(1000);
+          wrapper_max.css("display", "none");
+          wrapper_min.css("display", "grid");
         }
       }
     } else {
@@ -327,16 +334,22 @@ jQuery(document).ready(function ($) {
         navbar.removeClass("min-menu");
         navbar.outerWidth();
         navbar.addClass("max-menu");
+        await sleep(1000);
+        wrapper_max.css("display", "grid");
+        wrapper_min.css("display", "none");
       }
     }
   });
 
-  $("#menu_min").click(function () {
+  $("#menu_min").click(async function () {
     if (navbar.hasClass("min-menu")) {
       // Animación de volver grande el menú
       navbar.removeClass("min-menu");
       navbar.outerWidth();
       navbar.addClass("max-menu");
+      await sleep(1000);
+      wrapper_max.css("display", "grid");
+      wrapper_min.css("display", "none");
     }
   });
 }); // End document ready
