@@ -293,6 +293,7 @@ jQuery(document).ready(function ($) {
   let header = $("#top-bar");
   let header_height;
   let navbar = $("#nav-bar");
+  let navbar_mobile = $("#nav-bar-mobile");
 
   if (header.height()) {
     let padd_height =
@@ -300,34 +301,46 @@ jQuery(document).ready(function ($) {
       parseInt($("#top-bar").css("padding-bottom"));
     header_height = parseInt(header.height()) + padd_height;
     navbar.css("margin-top", header_height);
+    navbar_mobile.css("margin-top", header_height);
   } else {
     header_height = 0;
   }
 
   $(window).scroll(async function () {
-    if ($(this).scrollTop() >= header_height) {
-      navbar.css("margin-top", "0");
-      navbar.css("position", "fixed");
-
-      if ($(window).scrollTop() > 300) {
-        if (navbar.hasClass("max-menu")) {
-          // Animación de volver pequeño el menú
-          navbar.removeClass("max-menu");
+    console.log(window.innerWidth);
+    if (window.innerWidth > 450) { // El tamaño de las medias
+      if ($(this).scrollTop() >= header_height) {
+        navbar.css("margin-top", "0");
+        navbar.css("position", "fixed");
+  
+        if ($(window).scrollTop() > 300) {
+          if (navbar.hasClass("max-menu")) {
+            // Animación de volver pequeño el menú
+            navbar.removeClass("max-menu");
+            navbar.outerWidth();
+            navbar.addClass("min-menu");
+          }
+        }
+      } else {
+        navbar.css("margin-top", header_height);
+        navbar.css("position", "absolute");
+      }
+  
+      if ($(window).scrollTop() == 0) {
+        if (navbar.hasClass("min-menu")) {
+          // Animación de volver grande el menú
+          navbar.removeClass("min-menu");
           navbar.outerWidth();
-          navbar.addClass("min-menu");
+          navbar.addClass("max-menu");
         }
       }
-    } else {
-      navbar.css("margin-top", header_height);
-      navbar.css("position", "absolute");
-    }
-
-    if ($(window).scrollTop() == 0) {
-      if (navbar.hasClass("min-menu")) {
-        // Animación de volver grande el menú
-        navbar.removeClass("min-menu");
-        navbar.outerWidth();
-        navbar.addClass("max-menu");
+    }else{
+      if ($(this).scrollTop() >= header_height) {
+        navbar_mobile.css("margin-top", "0");
+        navbar_mobile.css("position", "fixed");
+      } else {
+        navbar_mobile.css("margin-top", header_height);
+        navbar_mobile.css("position", "absolute");
       }
     }
   });

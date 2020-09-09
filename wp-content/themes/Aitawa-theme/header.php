@@ -32,8 +32,7 @@ $url_theme = esc_url(home_url('/')) . 'wp-content/themes/Aitawa-theme/'; ?>
 
   <header>
 
-    <section id="nav-bar" class="max-menu">
-
+    <section id="nav-bar-mobile">
       <div class="content_mobile">
         <a href="http://www.localhost/team/aitawa" class="nav-logo logo-area">
           <img src="<?php echo $url_theme ?>/assets/img/aitawa-logo.svg" alt="Aitawa logo" />
@@ -53,7 +52,9 @@ $url_theme = esc_url(home_url('/')) . 'wp-content/themes/Aitawa-theme/'; ?>
           )); ?>
         </div>
       </div>
+    </section>
 
+    <section id="nav-bar" class="max-menu">
       <div class="content_min">
         <div class="content_wrapper">
           <div class="container-btn boton-area">

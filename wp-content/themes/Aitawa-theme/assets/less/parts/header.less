@@ -16,7 +16,7 @@
 }
 
 .min-menu {
-  animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+  animation: scale-menu 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; // Va hacia afuera
   animation-direction: reverse; // Ahora hacia adentro
   animation-delay: 0.5s;
   .content_min {
@@ -36,7 +36,7 @@
 }
 
 .max-menu {
-  animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
+  animation: scale-menu 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; // Va hacia afuera
   animation-delay: 0.5s;
   .content_min {
     .content_wrapper {
@@ -53,58 +53,6 @@
     }
   }
 }
-
-// .max-menu-start {
-//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
-// }
-
-// .content-max-menu-start{
-//   .content_max {
-//     .content_wrapper {
-//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-//     }
-//   }
-// }
-
-// .max-menu-end {
-//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
-//   animation-direction: reverse;
-// }
-
-// .content-max-menu-end{
-//   .content_max {
-//     .content_wrapper {
-//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-//       animation-direction: reverse;
-//     }
-//   }
-// }
-
-// .min-menu-start {
-//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
-//   animation-direction: reverse; // Ahora hacia adentro
-// }
-
-// .content-min-menu-start {
-//   .content_min {
-//     .content_wrapper {
-//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-//     }
-//   }
-// }
-
-// .min-menu-end {
-//   animation: scale-menu 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; // Va hacia afuera
-// }
-
-// .content-min-menu-end {
-//   .content_min {
-//     .content_wrapper {
-//       animation: opacity-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-//       animation-direction: reverse;
-//     }
-//   }
-// }
 
 @keyframes opacity-in {
   0% {
@@ -133,6 +81,10 @@
   }
 }
 
+#nav-bar-mobile {
+  display: none;
+}
+
 #nav-bar {
   position: absolute;
   top: 0;
@@ -141,11 +93,7 @@
   width: 270px;
   height: 600px;
   background-color: @white;
-  box-shadow: 0 0 33px 0 rgba(0,0,0,0.05);
-
-  .content_mobile {
-    display: none;
-  }
+  box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.05);
 
   .content_max {
     .content_wrapper {
@@ -243,13 +191,13 @@
       justify-items: center;
       align-items: center;
       background: white;
-  
+
       .social-wrapper {
         display: grid;
         grid-template-columns: 35px 35px 35px;
         grid-template-rows: 35px;
         margin: auto;
-  
+
         img {
           display: grid;
           width: 30px;
@@ -258,12 +206,12 @@
           align-self: center;
         }
       }
-  
+
       .container-btn {
         display: grid;
         align-items: stretch;
         justify-items: stretch;
-  
+
         .menu {
           cursor: pointer;
           background-color: @green;
@@ -273,7 +221,7 @@
           padding: 15px 30px;
           text-align: center;
           border-radius: 5px;
-  
+
           p {
             padding-top: 5px;
           }
@@ -315,8 +263,19 @@
 
 @media only screen and (max-width: 450px) {
   #nav-bar {
+    display: none;
+  }
+  #nav-bar-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     width: 100%;
-    height: 180px;
+    height: 155px;
+    background-color: @white;
+    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.05);
+
     .content_mobile {
       display: grid;
       grid-template-columns: 80px auto auto 80px;
@@ -352,7 +311,11 @@
       }
       .links-area {
         #menu {
+          display: flex;
+          align-content: center;
+          justify-content: space-evenly;
           li {
+            float: left;
             a {
               text-transform: uppercase;
               color: @black;
@@ -385,12 +348,6 @@
           }
         }
       }
-    }
-    .content_max {
-      display: none;
-    }
-    .content_min {
-      display: none;
     }
   }
 }
