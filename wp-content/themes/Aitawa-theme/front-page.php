@@ -5,18 +5,18 @@
 
 <main>
 
-  <section id="top-bar">
+  <!--<section id="top-bar">
     <div class="row no-margin">
       <div class="col xs12 s12 m12 l6 xl6">
         <p>
           Esta es una notificación del sitio web importante para usted, <a href="#">CLICK AQUÍ</a>.
         </p>
-      </div><!-- end col -->
-      <div class="col xs12 s12 m12 l6 xl6">
-        <div class="close-alert"> <i class="material-icons">close</i></div>
-      </div>
-    </div><!-- end row -->
-  </section>
+      </div><!- end col ->
+  <div class="col xs12 s12 m12 l6 xl6">
+    <div class="close-alert"> <i class="material-icons">close</i></div>
+  </div>
+  </div><!-- end row ->
+  </section>-->
 
 
   <section id="top-slider">

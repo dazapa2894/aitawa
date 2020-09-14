@@ -74,17 +74,17 @@ get_header('shop');
 			$content = $post['post_content'];
 		?>
 
-			<div class="row">
+			<div class="row results">
 
-				<div class="col xs12 s12 m12 l12 xl12 hide-991-up">
-					<?php get_sidebar('sidebar-mobile'); ?>
-				</div><!-- end col -->
-
-				<div class="col xs12 s12 m12 l12 xl12">
-					<?php do_action('woocommerce_before_shop_loop'); ?>
-				</div><!-- end col -->
+				<!--<div class="col xs12 s12 m12 l12 xl12 hide-991-up">
+					<?php //get_sidebar('sidebar-mobile'); 
+					?>
+				</div><!- end col -->
 
 				<div class="col xs12 s12 m12 l9 xl10 no-padding">
+					<div class="col xs12 s12 m12 l12 xl12">
+						<?php do_action('woocommerce_before_shop_loop'); ?>
+					</div><!-- end col -->
 					<?php
 					woocommerce_product_loop_start();
 
@@ -105,9 +105,9 @@ get_header('shop');
 					?>
 				</div><!-- en col -->
 
-				<!--<div class="col xs12 s12 m12 l3 xl2 hide-991-down">
-					<?php //do_action('woocommerce_sidebar'); ?>
-				</div><!- end col -->
+				<div class="col xs12 s12 m12 l3 xl2">
+					<?php do_action('woocommerce_sidebar'); ?>
+				</div><!-- end col -->
 
 			</div><!-- en row -->
 	</div><!-- end container -->

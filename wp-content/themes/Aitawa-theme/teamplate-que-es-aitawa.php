@@ -21,7 +21,7 @@ get_header(); ?>
                         <?php the_title(); ?>
                     </h1>
                     <p>
-                        El cloruro de Magnesio aporta muchos beneficios en salud y belleza. Descubre con Aitawa como aprovechar este milagro de la naturaleza en tu vida.
+                        <?php echo get_field('descripcion_corta'); ?>
                     </p>
                 </div>
             </section>
